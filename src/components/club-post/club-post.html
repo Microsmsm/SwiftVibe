@@ -1,0 +1,137 @@
+<!-- Generated template for the ClubPostComponent component -->
+
+
+<div class="post" *ngFor="let news of dataService.news" [style.background]="' url('+news.backgroundImage+')'">
+    <div class="seperator"></div>
+    <div class="postInfo">
+        <ion-grid>
+            <ion-row>
+                <ion-item no-lines text-left (click)="openProfile(news.userCode)">
+                    <ion-avatar item-start>
+                        <div class="userImage" [style.background]="' url('+getAvatar(news.userCode)+')'"></div>
+                    </ion-avatar>
+                    <p class="animated flipInX">{{getName(news.userCode)}}</p>
+                    <p item-end>
+                        <ion-icon name="md-time" color="light"></ion-icon> 3h</p>
+                </ion-item>
+            </ion-row>
+
+            <ion-row *ngIf="news.type == 'business'">
+                <div class="newsDetails business" padding (click)="openEvent(news.eventCode)">
+                    <h3 class="animated bounceIn">{{news.title}}</h3>
+                    <p class="animated flipInX">{{news.description}}</p>
+                    <ion-col col-3 style="color:#f4f4f4;">
+                        <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> {{news.viewCount}} k
+                    </ion-col>
+                    <ion-col col-3 style="color:#f4f4f4;">
+                        <ion-icon style="font-size: 20px;" name="sp-fire"></ion-icon> {{news.fireCount}} k
+                    </ion-col>
+                </div>
+            </ion-row>
+
+            <img *ngIf="news.image.length > 0" src="{{news.image}}" style="object-fit: cover; border-radius: 5px;">
+
+            <ion-row *ngIf="news.type == 'individual'">
+                <div class="newsDetails" padding (click)="openProfile(news.userCode)">
+                    <p class="animated bounceIn">{{news.description}}</p>
+                    <ion-col col-3 style="color:#f4f4f4;">
+                        <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> {{news.fireCount}} k</ion-col>
+                    <ion-col col-3 style="color:#f4f4f4;">
+                        <ion-icon style="font-size: 20px;" name="sp-ice" color="light"></ion-icon> {{news.viewCount}} k</ion-col>
+                </div>
+            </ion-row>
+
+
+
+
+
+
+
+            <ion-row class="commentHere">
+
+                <ion-input type="text" placeholder="Leave Your Comments Here">
+
+                </ion-input>
+            </ion-row>
+
+        </ion-grid>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<!--<div class="post animated slideInUp" *ngFor="let news of dataService.news" [style.background-image]="' url('+news.backgroundImage+')'">
+    <div class="seperator"></div>
+    <div class="postInfo">
+        <ion-grid>
+            <ion-row>
+                <ion-item no-lines text-left (click)="openProfile(news.userCode)">
+                    <ion-avatar item-start>
+                        <img src="{{getAvatar(news.userCode)}}" style="object-fit: cover;">
+                    </ion-avatar>
+
+                    <p class="animated flipInX">{{getName(news.userCode)}}</p>
+                    <p item-end>
+                        <ion-icon style="font-size: 20px;" name="sp-clock" color="light"></ion-icon> 3h</p>
+                </ion-item>
+            </ion-row>
+
+
+            <ion-row *ngIf="news.type == 'business'">
+                <ion-col padding (click)="openEvent(news.eventCode)">
+                    <h3 class="animated bounceIn">{{news.title}}</h3>
+                    <p class="animated flipInX">{{news.description}}</p>
+                    <ion-row>
+                        <ion-col style="color:#f4f4f4;">
+                            <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> {{news.viewCount}} k</ion-col>
+                        <ion-col style="color:#f4f4f4;">
+                            <ion-icon style="font-size: 20px;" name="sp-fire"></ion-icon> {{news.fireCount}} k</ion-col>
+                        <ion-col></ion-col>
+
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+
+            <img *ngIf="news.image.length > 0" src="{{news.image}}" style="object-fit: cover; border-radius: 5px;">
+
+            <ion-row *ngIf="news.type == 'individual'">
+                <ion-col padding (click)="openProfile(news.userCode)">
+                    <p class="animated bounceIn">{{news.description}}</p>
+                    <ion-row>
+                        <ion-col style="color:#f4f4f4;">
+                            <ion-icon style="font-size: 20px;" name="sp-ice" color="light"></ion-icon> {{news.viewCount}} k</ion-col>
+                        <ion-col style="color:#f4f4f4;">
+                            <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> {{news.fireCount}} k</ion-col>
+                        <ion-col></ion-col>
+
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+
+
+
+
+
+
+
+            <ion-row>
+
+                <ion-input type="text" placeholder="Leave Your Comments Here">
+
+                </ion-input>
+            </ion-row>
+
+        </ion-grid>
+
+
+    </div>
+
+
+
+</div>-->

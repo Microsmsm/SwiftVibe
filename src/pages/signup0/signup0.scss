@@ -1,0 +1,28 @@
+signup0 {
+    .login {
+        letter-spacing: 0.5px;
+        h3{
+            font-size: 22px;
+            color: #898e90;
+            font-family: $gilroyLight;
+        }
+        p {
+            color: #f4f4f4;
+            margin: 15px 0
+        }
+        span {
+            color: #10cef4;
+        }
+    }
+    .inputForms {
+        ion-list {
+            padding: 50px 30px;
+            img {
+                max-width: 80px;
+            }
+            input{
+                font-style: italic;
+            }
+        }
+    }
+}

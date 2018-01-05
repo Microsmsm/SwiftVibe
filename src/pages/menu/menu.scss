@@ -1,0 +1,60 @@
+page-menu {
+
+  .menu{
+    background-color: rgba(123,105,169, 0.90);
+    color:#fff;
+
+
+
+    button{
+      border:solid;
+      border-color: rgba(143, 73, 255, 0.40);
+    }
+
+
+  }
+
+  .menuOption{
+    display: inline-block;
+    min-height: 40%;
+    width: 33%;
+    background-color: transparent;
+    text-align: center;
+
+    button{
+      margin-left: auto;
+      margin-right: auto;
+
+        border:solid;
+        border-color: rgba(143, 73, 255, 0.40);
+
+    }
+
+  }
+
+
+
+
+  .custom-avatar {
+
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+      border:solid;
+      border-color: #fff;
+      border-radius: 50%;
+      height: 120px;
+      width:120px;
+
+    }
+
+    height: 120px;
+    width:120px;
+
+  }
+
+
+
+}

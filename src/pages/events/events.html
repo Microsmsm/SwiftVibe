@@ -1,0 +1,149 @@
+<!--
+  Generated template for the EventsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+
+
+    <ion-row>
+
+      <ion-col text-center col-9>
+        <p style="color: #ffffff;">EVENTS</p>
+      </ion-col>
+      <ion-col text-right col-3 >
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="events">
+
+  <ion-fab bottom right class="menu" >
+    <button ion-fab  color="black"  (click)="menu()"  >
+      <ion-icon style="font-size: 30px;" name="menu" color="light" item-end></ion-icon>
+    </button>
+  </ion-fab>
+
+  <h2 style="text-align: center">Featured Events</h2>
+
+  <div style="height: 25%" class=" animated slideInRight">
+    <ion-slides   autoplay="2000" loop="true" speed="2000" slidesPerView="2.5" spaceBetween="2"  >
+
+
+      <ion-slide *ngFor="let event of dataService.events" [style.background-image]="' url('+event.backgroundImage+')'" style="object-fit: cover;height:100%;">
+        <div style="height: 60%">
+          <h2>&nbsp;</h2>
+        </div>
+
+        <div style="height: 40%">
+          <h2>{{getName(event.userCode)}}</h2>
+        </div>
+
+      </ion-slide>
+
+
+    </ion-slides>
+  </div>
+  <div style="height: 75%">
+    <div class="post animated slideInUp"  *ngFor="let event of dataService.events"  [style.background-image]="' url('+event.backgroundImage+')'" >
+      <div class="seperator"></div>
+      <div class="postInfo">
+        <ion-grid>
+          <ion-row  >
+            <ion-item no-lines text-left color="clear" (click)="openProfile(event.userCode)" >
+              <ion-avatar item-start  >
+                <img src="{{getAvatar(event.userCode)}}" style="object-fit: cover; border-color: #fff;border: solid;" >
+              </ion-avatar>
+              <h2>{{getName(event.userCode)}}</h2>
+              <p>
+                <ion-icon style="font-size: 20px;" name="musical-notes" color="light"></ion-icon>
+                <small> {{event.genre}}</small></p>
+              <div item-end text-right>
+                <h2>MAR</h2>
+              <h1>14</h1>
+                </div>
+            </ion-item>
+          </ion-row>
+
+
+          <ion-row style="padding-top: 15%;">
+            <ion-col padding (click)="openEvent(event.code)">
+              <h3 class="animated bounceIn">{{event.name}}</h3>
+              <p class="animated flipInX">{{event.details}}</p>
+              <ion-row>
+                <p item-end >
+                  <small>
+                    <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> {{event.viewCount}} k
+                    &nbsp;
+                    <ion-icon style="font-size: 20px;" name="sp-ice" color="light"></ion-icon> 16.3 k
+                    &nbsp;
+                    <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> {{event.engageCount}} k
+                  </small>
+                </p>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-grid>
+      </div>
+
+      <ion-row style="background-color: #000;" text-center>
+        <ion-col col-3>
+
+            <ion-icon style="font-size: 30px;"  name="sp-venue" color="light"></ion-icon>
+
+        </ion-col>
+        <ion-col col-3>
+
+            <ion-icon style="font-size: 30px;"  name="sp-ice" color="light"></ion-icon>
+
+        </ion-col>
+        <ion-col col-3>
+
+            <ion-icon style="font-size: 30px;"  name="sp-fire" color="light"></ion-icon>
+
+        </ion-col>
+        <ion-col col-3>
+
+            <ion-icon style="font-size: 30px;"  name="sp-share" color="light"></ion-icon>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="background-color: #171a27; " >
+        <ion-col col-10 >
+
+          <ion-input type="text" placeholder="&nbsp; Leave Your Comments Here" style="border-color: #ffffff;border:solid; border-radius: 5px;">
+
+
+          </ion-input>
+        </ion-col>
+
+        <ion-col  col-2>
+
+          <button ion-fab  color="clear"  text-center  >
+            <ion-icon name="text"></ion-icon>
+          </button>
+
+        </ion-col>
+      </ion-row>
+
+    </div>
+
+
+  </div>
+
+
+
+
+</ion-content>

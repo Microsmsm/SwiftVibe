@@ -1,0 +1,47 @@
+page-messages {
+    .messages {
+        background: #0a0a16;
+        letter-spacing: 0.5px;
+        ion-segment {
+            color: $white;
+            .segment-button {
+                color: #b2becf;
+                border: none;
+                .seperator {
+                    width: 80%;
+                    opacity: 0;
+                    margin: 0 auto;
+                }
+            }
+            .segment-button.segment-activated {
+                color: #b2becf;
+                .seperator {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    h1,
+    h2 {
+        color: $white;
+    }
+    .item {
+        background-color: transparent;
+        margin-bottom: 5px;
+        ion-avatar {
+            margin-top: 0 !important;
+            img {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #fff;
+            }
+        }
+        ion-label {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .timedis{
+            font-size: 12px;
+        }
+    }
+}

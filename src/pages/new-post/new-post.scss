@@ -1,0 +1,137 @@
+page-new-post {
+    .newPost {
+        min-height: 100%;
+        background: #0a0a16;
+        color: #fff;
+        .col {
+            font-family: $gilroyLight;
+        }
+    }
+    .visibleRow{
+        display: inline-block;
+        width: 100%;
+        padding: 0 16px;
+        text-align: right;
+        ion-icon{
+            font-size: 22px;
+            padding:  2px 5px;
+        }
+        ion-select{
+            max-width: 90px;
+            position: relative;
+            float: right;
+            padding: 5px;
+        }
+    }
+    .searchForm{
+        background-color: transparent;
+        margin-bottom: 5px;
+        border-bottom: 3px solid #353740;
+        .item-inner{
+            border: none !important;
+            box-shadow: none !important;
+            &:focus{
+                border: none !important;
+                box-shadow: none !important;
+            }
+            input{
+                color: $white;
+                margin-left: 0px;
+            }
+        }
+        img{
+            width: 36px;
+        }
+    }
+    
+    
+    .pictureOptions{
+        width: 100%;
+        display: inline-block;
+        padding: 16px 10px;
+        .pictureOptionsCol{
+            width: 33.3%;
+            float: left;
+            text-align: center;
+            padding: 0 5px;
+            
+            &:nth-child(1) .pictureOptionsColInner{
+                background: #10cff4; /* Old browsers */
+                background: -moz-linear-gradient(-45deg, #10cff4 0%, #28a9e2 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, #10cff4 0%,#28a9e2 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, #10cff4 0%,#28a9e2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#10cff4', endColorstr='#28a9e2',GradientType=1 );
+            }
+            
+            &:nth-child(2) .pictureOptionsColInner{
+                background: #3596da; /* Old browsers */
+                background: -moz-linear-gradient(-45deg, #3596da 0%, #585fbf 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, #3596da 0%,#585fbf 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, #3596da 0%,#585fbf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3596da', endColorstr='#585fbf',GradientType=1 ); 
+            }
+            
+            &:nth-child(3) .pictureOptionsColInner{
+                background: #5a5bbe; /* Old browsers */
+                background: -moz-linear-gradient(-45deg, #5a5bbe 0%, #6d3eb0 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg, #5a5bbe 0%,#6d3eb0 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg, #5a5bbe 0%,#6d3eb0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a5bbe', endColorstr='#6d3eb0',GradientType=1 );
+            }
+            
+            .pictureOptionsColInner{
+                background: #ccc;
+                padding: 5px;
+                border-radius: 10px;
+                
+                
+            }
+            .bigIcon{
+                font-size:30px;
+                text-align: right;
+                display: block;
+                margin-right: 0;
+                margin-left: auto;
+            } 
+            .plusIcon{
+                font-size:20px;
+            } 
+            p{
+                font-size: 11px;
+                margin: 0;
+                padding: 7px 0;
+            }
+        }
+    }
+    
+    
+    .backgroundImg{
+        text-align: center;
+        img{
+            width: 80%;
+            box-shadow: 0px 0px 10px 6px #000;
+            object-fit: cover;
+        }
+    }
+    
+    .removePostButs{
+        text-align: center;
+        .removePostButsInner{
+            text-transform: none;
+            color: $white;
+            background: none;
+            box-shadow: none;
+            font-family: $gilroyLight;
+            font-size: 12px;
+            text-align: center;
+            width: 40%;
+            margin: 0 5px;
+            display: inline-block;
+            ion-icon{
+                display: block;
+                font-size: 36px;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,72 @@
+page-search {
+    .searchForm{
+        ion-input{
+            border-bottom: 2px solid $white;
+            input{
+                margin: 17px 8px 10px 8px;
+                &::-moz-placeholder{
+                    color: $white;
+                }
+                &:-ms-input-placeholder{
+                    color: $white;
+                }
+                &::-webkit-input-placeholder{
+                    color: $white;
+                }
+            }
+        }
+    }
+    .search {
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+        letter-spacing: 0.7px;
+        background-color: #121623;
+        color: $white;
+        ion-list{
+            margin-bottom: -3px;
+            ion-item:last-child{
+                margin-bottom: 5px;
+            }
+        }
+        ion-list-header{
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            ion-label{
+                padding: 13px 8px 13px 16px;
+                margin: 0px;
+                border-top: 3px solid #0f2e41;
+                border-bottom: 3px solid #0f2e41;
+            }
+        }
+        .dot{
+            color: $white;
+        }
+        ion-avatar img{
+            width: 50px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .searchlistIcon{
+            width: 25px;
+        }
+        p{
+            color: #ccc;
+        }
+    }
+
+    h2, p {
+        color: $white;
+    }
+
+    .item {
+        background-color: transparent;
+    }
+
+    .input {
+        width: 100%;
+        color: $white;
+    }
+
+}

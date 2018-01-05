@@ -1,0 +1,48 @@
+page-conversation {
+
+  .toolbar-background {
+    background: #000; /* For browsers that do not support gradients */
+
+  }
+
+  .conversation{
+    background-color: #000000;
+  }
+
+  .item{
+    background-color: transparent;
+  }
+  .sender{
+    background-color: #762fa9;
+    border-radius: 10px;
+    color: #ffffff;
+
+  }
+
+  .notSender{
+    background-color: #10cef3;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+
+  .textarea {
+    background: white;
+  }
+
+  .input{
+    color: #000;
+    background-color: #ffffff;
+  }
+
+  .textarea{
+    background-color: #ffffff;
+
+    .toolbar-background {
+      background: #fff; /* For browsers that do not support gradients */
+
+    }
+  }
+
+}
+
+

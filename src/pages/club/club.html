@@ -1,0 +1,207 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="userProfile">
+  <div class="profileHead"  [style.background-image]="' url('+user.banner+')'">
+
+    <div class="profileInfo " >
+
+      <div style="height: 50%" >
+
+        <img src="images/placeholder2.png"  style="object-fit: cover;" />
+
+      </div>
+
+      <div style="height: 50%" >
+
+        <div class="area" no-padding>
+          <ion-grid>
+
+            <ion-row >
+              <ion-item no-lines text-left>
+                <ion-avatar item-start>
+
+                  <img src="{{user.image}}" style="object-fit: cover;width: 80px;height: 80px; ">
+                </ion-avatar>
+                <h2>{{user.name}}</h2>
+                <h3>  <ion-icon *ngFor="let key of counter(user.rating)" name="star" color="main"></ion-icon> </h3>
+                <p>{{user.followersCount}} Followers</p>
+
+              </ion-item>
+            </ion-row>
+
+
+
+            <ion-row>
+              <ion-col text-left>
+
+              </ion-col>
+
+              <ion-col text-right>
+                <button color="light" item-end outline block ion-button class="animated slideInLeft" > <ion-icon name="person-add"></ion-icon> &nbsp; Follow</button>
+
+              </ion-col>
+
+              <ion-col text-right>
+
+
+                <button color="light" item-end outline block ion-button class="animated slideInRight" (click)="message(user)"><ion-icon name="chatboxes"></ion-icon> &nbsp; Message</button>
+              </ion-col>
+            </ion-row>
+
+
+          </ion-grid>
+
+
+          <ion-slides   autoplay="2000" loop="true" speed="2000" slidesPerView="4.5" spaceBetween="2" >
+
+            <ion-slide >
+              <img src="images/gallery.jpg">
+            </ion-slide>
+
+            <ion-slide >
+              <img src="images/gallery1.jpg" >
+            </ion-slide>
+
+            <ion-slide>
+              <img src="images/gallery2.jpg" >
+            </ion-slide>
+
+            <ion-slide>
+              <img src="images/club1.png" >
+            </ion-slide>
+
+          </ion-slides>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+
+  <div class="seperator"></div>
+
+  <div padding-top padding-bottom >
+    <ion-segment [(ngModel)]="segment" color="light">
+
+      <ion-segment-button class="animated zoomInUp" value="events" style="font-family: gilroy;">
+        Events
+      </ion-segment-button>
+
+      <ion-segment-button class="animated zoomInUp" value="news" style="font-family: gilroy;">
+        News Feed
+      </ion-segment-button>
+
+      <ion-segment-button class="animated zoomInUp" value="gallery" style="font-family: gilroy;">
+        Gallery
+      </ion-segment-button>
+      <ion-segment-button class="animated zoomInUp" value="info" style="font-family: gilroy;">
+        Info
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch] ="segment">
+
+    <ion-list *ngSwitchCase="'news'" no-lines>
+
+          <club-post></club-post>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'events'" no-lines>
+
+      <div class="post animated slideInUp"  *ngFor="let event of events"  [style.background-image]="' url('+event.backgroundImage+')'" >
+
+        <div class="postInfo">
+          <ion-grid>
+            <ion-row >
+              <ion-item no-lines text-left>
+                <ion-avatar item-start >
+                  <img src="{{user.image}}" style="object-fit: cover;">
+                </ion-avatar>
+                <p item-end>
+                  <ion-icon style="font-size: 20px;" name="time" color="light"></ion-icon> 3h</p>
+              </ion-item>
+            </ion-row>
+
+
+            <ion-row >
+              <ion-col padding (click)="openEvent(event.code)">
+                <h3 class="animated bounceIn">{{event.name}}</h3>
+                <p class="animated flipInX">{{user.name}}</p>
+
+                <ion-row>
+                  <ion-col style="color:#f4f4f4;">  <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> {{event.viewCount}} k</ion-col>
+                  <ion-col style="color:#f4f4f4;">  <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> {{event.engageCount}} k</ion-col>
+                  <ion-col></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </div>
+
+      </div>
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'gallery'" no-lines>
+
+      <div class="gallery"    *ngFor="let image of dataService.images" [style.background-image]="' url('+image+')'">
+        <ion-row style="min-height: 100%;">
+          <ion-col col-12 text-right padding >
+            <img src="images/placeholder2.png" >
+
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'info'" no-lines>
+
+
+        <ion-list no-lines padding-top>
+
+
+          <ion-item>
+            <ion-label text-left item-start>Music Genre:</ion-label>
+            <ion-label text-right>{{user.genre}}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Age Group:</ion-label>
+            <ion-label text-right>{{user.ageGroup}}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Dress Code:</ion-label>
+            <ion-label text-right>{{user.dressCode}}</ion-label> </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Capacity:</ion-label>
+            <ion-label text-right>{{user.capacity}}</ion-label></ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Address:</ion-label>
+            <ion-label text-right>{{user.address}}</ion-label>
+          </ion-item>
+
+
+
+        </ion-list>
+
+
+    </ion-list>
+  </div>
+</ion-content>

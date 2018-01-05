@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar class="searchForm">
+        <ion-input [(ngModel)]="searchTerm" type="text" placeholder="Search Here"></ion-input>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="search(searchTerm)">
+        <ion-icon end style="font-size: 30px;" name="search" color="light" ></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="search">
+    <ion-list no-lines>
+        <ion-list-header>
+            <h2>FRIENDS</h2>
+        </ion-list-header>
+
+        <ion-item *ngFor="let user of users" no-lines>
+            <ion-avatar item-start>
+                <img src="{{user.image}}">
+            </ion-avatar>
+            <h2>{{user.name}}</h2>
+            <p>{{user.followersCount}} Followers <span class="dot">♦</span> {{user.followingCount}} Following </p>
+            <img item-end src="assets/imgs/searchlistIcon.png" class="searchlistIcon">
+        </ion-item>
+    </ion-list>
+
+    <ion-list no-lines>
+        <ion-list-header>
+            <h2>VENUES</h2>
+        </ion-list-header>
+
+        <ion-item *ngFor="let venue of venues" no-lines>
+            <ion-avatar item-start>
+                <img src="{{venue.image}}">
+            </ion-avatar>
+            <h2>{{venue.name}}</h2>
+        </ion-item>
+    </ion-list>
+
+    <ion-list no-lines>
+        <ion-list-header>
+            <h2>EVENTS</h2>
+        </ion-list-header>
+
+        <ion-item *ngFor="let event of events" no-lines>
+            <ion-avatar item-start>
+                <img src="{{event.image}}">
+            </ion-avatar>
+            <h2>{{event.name}}</h2>
+        </ion-item>
+    </ion-list>
+</ion-content>

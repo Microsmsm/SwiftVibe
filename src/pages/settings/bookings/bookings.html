@@ -1,0 +1,80 @@
+<!--
+  Generated template for the BookingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><small> BOOKINGS </small></ion-title>
+  </ion-navbar>
+  <div class="seperator"></div>
+
+
+</ion-header>
+
+
+<ion-content class="bookingsSettings" padding >
+
+  <ion-row>
+
+    <ion-col col-12 text-center>
+    <h2 text-center>Booking Name</h2>
+    <p>This is the name that venues will receive when you submit a guestlist reservation or buy tickets</p>
+
+      <p style="color:#69c2d4;" ><small>Your name will not be shared with other users</small></p>
+
+
+  </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12 text-center>
+    <ion-input placeholder="First Name" text-center></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12 text-center>
+    <ion-input placeholder="Last Name" text-center></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12 text-center>
+      <img src="images/autoReminder.png" style="object-fit: cover; width: 50%">
+    </ion-col>
+  </ion-row>
+
+  <ion-item no-lines>
+    <ion-label><small> Activate Auto-Reminders</small></ion-label>
+    <ion-toggle  color="blue" checked="true"></ion-toggle>
+  </ion-item>
+
+  <ion-row>
+    <ion-col col-12 text-center>
+     <p>Select when you would like to receive a reminder</p>
+
+      <ion-segment [(ngModel)]="reminder" color="blue">
+        <ion-segment-button value="1">
+          1 Day
+        </ion-segment-button>
+        <ion-segment-button value="2">
+          2 Days
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          3 Days
+        </ion-segment-button>
+      </ion-segment>
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>
+
+<ion-footer>
+  <div class="seperator"></div>
+</ion-footer>
+

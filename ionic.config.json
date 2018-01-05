@@ -1,0 +1,8 @@
+{
+  "name": "StalkPress",
+  "app_id": "4bdf437c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

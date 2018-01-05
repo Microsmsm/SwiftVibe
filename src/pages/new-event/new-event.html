@@ -1,0 +1,123 @@
+<!--
+  Generated template for the NewEventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><small>NEW EVENT</small></ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon end style="font-size: 30px;" name="sp-event" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content class="newPost" >
+
+
+
+
+        <ng-container>
+
+          <ion-row>
+            <ion-col> <h2 text-center class="animated flipInX">Name</h2></ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-textarea [(ngModel)]="name" rows="2" style="font-family: gilroy-light;" placeholder="e.g Birthday Party" text-center></ion-textarea>
+          </ion-row>
+
+          <ion-row>
+            <ion-col> <h2 text-center class="animated flipInX">Details</h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>   <ion-textarea [(ngModel)]="details" rows="3" style="font-family: gilroy-light;" placeholder="Add more info ..." text-center></ion-textarea>
+            </ion-col>
+          </ion-row>
+
+
+
+          <ion-row>
+            <ion-col> <h2 text-center class="animated flipInX">When</h2></ion-col>
+            <ion-col> <h2 text-center class="animated flipInX">Where</h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col text-center >  <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="date" ></ion-datetime>  </ion-col>
+            <ion-col text-center >  <ion-textarea [(ngModel)]="where" rows="3" style="font-family: gilroy-light;" placeholder="Add a place ?" text-center></ion-textarea>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+
+            <ion-col> <h2 text-center class="animated flipInX">Start</h2></ion-col>
+            <ion-col><h2 text-center class="animated flipInX">End </h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>      <ion-datetime displayFormat="HH:mm A"  [(ngModel)]="startTime" text-center></ion-datetime></ion-col>
+            <ion-col>      <ion-datetime displayFormat="HH:mm A"  [(ngModel)]="endTime"  text-center></ion-datetime></ion-col>
+          </ion-row>
+
+
+
+
+          <ion-row>
+            <ion-col> <h2 text-center class="animated flipInX">Genre</h2></ion-col>
+            <ion-col> <h2 text-center class="animated flipInX">Dress Code</h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>    <ion-textarea [(ngModel)]="genre" rows="1" style="font-family: gilroy-light; " placeholder="Music genre" text-center></ion-textarea>
+            </ion-col>
+            <ion-col>   <ion-textarea [(ngModel)]="dressCode" rows="2" style="font-family: gilroy-light;" placeholder="Black Tie" text-center></ion-textarea>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col> <h2 text-center class="animated flipInX">Banner</h2></ion-col>
+            <ion-col> <h2 text-center class="animated flipInX">Image</h2></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col text-center  (click)="getPicture('background')" >
+              <ion-icon  *ngIf="background.length == 0" style="font-size: 30px;" name="camera" color="light" ></ion-icon>
+              <img *ngIf="background.length > 0" src="{{background}}"  style="object-fit: cover;">
+            </ion-col>
+
+            <ion-col text-center (click)="getPicture('image')">
+              <ion-icon  *ngIf="image.length == 0" style="font-size: 30px;" name="camera" color="light"  ></ion-icon>
+              <img *ngIf="image.length > 0" src="{{image}}"   style="object-fit: cover;">
+            </ion-col>
+          </ion-row>
+
+
+        </ng-container>
+
+
+
+    <ion-item class="animated bounceInUp" no-lines>
+      <button color="light" ion-button block  large (click)="preview()">Preview</button>
+    </ion-item>
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+  <div class="seperator"></div>
+</ion-footer>
+

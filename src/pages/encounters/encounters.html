@@ -1,0 +1,88 @@
+<!--
+  Generated template for the EncountersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar padding-left padding-right >
+
+    <ion-row>
+      <ion-col col-3> <img src="{{dataService.account.image}}" class="custom-avatar"  style="object-fit: cover;"  item-start (click)="open()"/> </ion-col>
+      <ion-col text-center col-6>
+        <p style="color: #ffffff;">ENCOUNTERS</p>
+      </ion-col>
+      <ion-col text-right col-3 >
+        <img src="images/wink.png" style="object-fit: cover; width: 35px;">
+      </ion-col>
+
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="encounters" (ionScroll)="scrollHandler($event)" >
+
+  <ion-row>
+    <ion-col col-6 text-left padding-left>
+      <h5>MATCHES</h5>
+    </ion-col>
+    <ion-col col-6 text-right padding-right>
+      <ion-icon  style="font-size: 30px;" name="apps"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div style="height: 35%" class=" animated slideInRight">
+    <ion-slides slidesPerView="3.5" spaceBetween="2"  >
+
+      <ion-slide *ngFor="let match of dataService.matches; let i = index" style="object-fit: cover;height:100%;">
+        <div style="height: 100%">
+          <img src="{{match.image}}" class="encounter-avatar"  style="object-fit: cover;"  />
+
+          <h5><small>{{match.name}}</small></h5>
+        </div>
+
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
+<div>
+
+  <h5 class="seperator" padding-top padding-bottom>USERS YOU'VE ENCOUNTERED</h5>
+
+  <div class="people animated flipInY"    *ngFor="let encounter of dataService.encounters; let i = index" [style.background-image]="' url('+encounter.image+')'">
+    <ion-grid style="min-height: 100%" padding-top padding-bottom>
+
+      <ion-row><p small>&nbsp; {{i}} h Ago</p></ion-row>
+      <ion-row >
+        <ion-col col-12>
+          <h4 text-center>{{encounter.name}}</h4>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col text-left>
+          <ion-icon style="font-size: 30px;" name="heart" color="light" ></ion-icon>
+        </ion-col>
+        <ion-col text-right>
+          <img src="images/wink.png" style="object-fit: cover; width: 35px;">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</div>
+
+
+
+  <ion-fab bottom right class="menu" >
+    <button ion-fab  color="black"  (click)="menu()"  >
+      <ion-icon style="font-size: 30px;" name="menu" color="light" item-end></ion-icon>
+    </button>
+  </ion-fab>
+
+
+</ion-content>

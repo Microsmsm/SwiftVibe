@@ -1,0 +1,116 @@
+page-club {
+
+
+  .userProfile {
+    font-family: gilroy;
+    color: #ffffff;
+    background: #0a0a16;
+
+    p{
+      color: #ffffff;
+    }
+
+    .profileHead {
+      display: inline-block;
+
+      width: 100%;
+      background-color: transparent;
+
+      background-size: cover;
+      background-position: center;
+
+
+    }
+
+    .profileInfo {
+
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-position: center;
+
+      .area {
+        background: rgba(0, 0, 0, 0.50);
+      }
+
+      h2 {
+        font-family: gilroy;
+        color: #ffffff;
+      }
+    }
+
+    .slides {
+      width: 100%;
+      min-height: 100%;
+      text-align: center;
+      border-radius: 5px;
+
+      display: inline-block;
+      background-size: cover;
+      background-position: center;
+      background: no-repeat;
+
+    }
+
+    .item {
+      background: transparent;
+      color: #fff;
+    }
+
+    span {
+      font-family: gilroy-light;
+    }
+
+    .input {
+
+      background-color: transparent;
+      text-align: center;
+      border-color: #ffffff;
+      border: solid;
+      border-radius: 5px;
+    }
+
+    .post{
+      display: inline-block;
+      min-height: 45%;
+      width: 100%;
+      background-color: transparent;
+
+
+      background-size: cover;
+      background-position: center;
+
+      border-top: solid;
+      border-color: #000000;
+
+    }
+
+    .postInfo {
+      width: 100%;
+      height: 100%;
+      background: rgba(62, 28, 107, 0.40);
+
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery{
+
+      display: inline-block;
+      height: 20%;
+      width: 33%;
+      border-radius: 5px;
+      border-color: #000000;
+      border-style: solid;
+
+      background-size: cover;
+      background-position: top;
+
+    }
+
+  }
+
+
+}

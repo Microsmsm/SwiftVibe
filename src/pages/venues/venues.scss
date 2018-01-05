@@ -1,0 +1,24 @@
+page-venues {
+
+  .toolbar-background {
+    background: #000;
+  }
+
+  .venues{
+
+    min-height: 100%;
+    background: #000;
+
+    ion-slide{
+
+      color: #ffffff;
+
+      display: inline-block;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+  }
+
+}

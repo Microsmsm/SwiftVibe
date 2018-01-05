@@ -1,0 +1,40 @@
+<ion-header class="transparentBG">
+    <ion-navbar>
+        <ion-title>USER REGISTEATION</ion-title>
+    </ion-navbar>
+    <div class="seperator"></div>
+</ion-header>
+
+<ion-content class="login inputForms">
+    <div class="verticalAlignMiddle">
+        <div class="verticalAlignMiddleChild">
+            <ion-list text-center>
+                <img src="assets/imgs/plusIconSignup.png">
+                <h3>Create Account</h3>
+
+                <p>Register today and start enjoying the <span>SwiftVibe</span> experience!</p>
+
+                <ion-item>
+                    <ion-input class="mailIcon" [(ngModel)]="username" type="email" placeholder="E-mail"></ion-input>
+                </ion-item>
+                
+                <ion-item>
+                    <ion-input class="mailIcon" [(ngModel)]="phome" type="tel" placeholder="Phone#"></ion-input>
+                </ion-item>
+                
+                
+                <ion-item>
+                    <ion-input class="lockIcon" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+                </ion-item>
+                
+                <ion-item>
+                    <ion-input class="lockIcon" [(ngModel)]="password" type="password" placeholder="Confirm Password"></ion-input>
+                </ion-item>
+
+                <button color="main" ion-button (click)="signupverification()">
+                    Create account
+                </button>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

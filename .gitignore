@@ -1,0 +1,8 @@
+
+.sourcemaps/
+node_modules/
+platforms/
+plugins/
+www/
+hooks/README.md
+README.md

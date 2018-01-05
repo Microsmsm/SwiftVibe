@@ -1,0 +1,272 @@
+<!--
+  Generated template for the UserProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="userProfile">
+
+  <ion-fab bottom right >
+    <button ion-fab color="black" ><img src="images/newPost.png"  style="object-fit: cover;" /></button>
+  </ion-fab>
+
+
+  <div class="profileHead" [style.background-image]="' url('+user.banner+')'"   style="max-height: 100%"  >
+
+    <div class="profileInfo " style="min-height: 100%"  >
+
+      <div style="height: 25%" >
+
+          <img src="images/placeholder2.png"  style="object-fit: cover;" />
+
+      </div>
+
+      <div style="height: 75%">
+
+        <div padding-left  >
+        <div class="custom-avatar" >
+          <img src="{{user.image}}"  style="object-fit: cover;"  />
+        </div>
+          </div>
+
+        <ion-grid style="height: 100%" >
+
+          <div style="max-height: 100%" >
+
+          <ion-row class="animated flipInX">
+            <h2 text-left >&nbsp;</h2>
+          </ion-row>
+
+
+
+          <ion-row >
+            <h2 text-left >{{user.name}}</h2>
+          </ion-row>
+
+            <ion-row *ngIf="type == 'business'">
+
+              <ion-col text-left>
+                <ion-icon *ngFor="let key of counter(user.rating)" name="star" color="main"></ion-icon>
+              </ion-col>
+
+            </ion-row>
+
+          <ion-row>
+            <ion-col text-left>
+              {{user.followersCount}} Followers
+            </ion-col>
+            <ion-col text-left *ngIf="type == 'individual'">
+            {{user.followingCount}} Following
+          </ion-col>
+
+
+            <ion-col text-right (click)="options()">
+              <ion-icon style="font-size: 20px;" name="more" color="light"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+            <div padding-top padding-bottom >
+              <ion-segment [(ngModel)]="segment" color="light">
+                <ion-segment-button *ngIf="user.type == 'club'" class="animated zoomInUp" value="events" style="font-family: gilroy;">
+                  Events
+                </ion-segment-button>
+                <ion-segment-button class="animated zoomInUp" value="news" style="font-family: gilroy;">
+                  News Feed
+                </ion-segment-button>
+                <ion-segment-button class="animated zoomInUp" value="gallery" style="font-family: gilroy;">
+                  Gallery
+                </ion-segment-button>
+                <ion-segment-button class="animated zoomInDown" value="showcase" style="font-family: gilroy;">
+                  Showcase
+                </ion-segment-button>
+                <ion-segment-button class="animated zoomInUp" value="info" style="font-family: gilroy;">
+                  Info
+                </ion-segment-button>
+
+              </ion-segment>
+            </div>
+
+            </div>
+
+
+
+
+
+
+
+
+        </ion-grid>
+
+
+
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+
+    <div class="seperator"></div>
+
+
+  </div>
+
+
+
+
+
+
+  <div [ngSwitch] ="segment">
+
+    <ion-list *ngSwitchCase="'events'" no-lines>
+      <ng-container>
+
+      </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'news'" no-lines>
+      <ng-container>
+
+      <club-post></club-post>
+      </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'gallery'" no-lines>
+      <ng-container >
+      <div class="gallery"    *ngFor="let image of dataService.images" [style.background-image]="' url('+image+')'">
+        <ion-row style="min-height: 100%;">
+          <ion-col col-12 text-right padding >
+            <img src="images/placeholder2.png" >
+
+          </ion-col>
+        </ion-row>
+      </div>
+        </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'showcase'" no-lines>
+      <ng-container>
+
+
+      </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'info'" no-lines >
+      <ng-container >
+
+
+        <ion-list no-lines *ngIf="type == 'individual'" padding-top>
+
+        <ion-item>
+          <ion-label text-left item-start>Name:</ion-label>
+          <ion-label text-right>{{user.name}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label text-left item-start>Age:</ion-label>
+          <ion-label text-right>{{user.age}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label text-left item-start>Gender:</ion-label>
+          <ion-label text-right>{{user.gender}}</ion-label> </ion-item>
+
+        <ion-item>
+          <ion-label text-left item-start>City:</ion-label>
+          <ion-label text-right>{{user.city}}</ion-label></ion-item>
+
+        <ion-item>
+          <ion-label text-left item-start>Country:</ion-label>
+          <ion-label text-right>{{user.country}}</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label text-left item-start>Music Preference:</ion-label>
+          <ion-label text-right>{{user.music}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Occupation:</ion-label>
+          <ion-label text-right>{{user.occupation}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Intentions:</ion-label>
+          <ion-label text-right>{{user.intentions}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Orientation:</ion-label>
+          <ion-label text-right>{{user.orientation}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Height:</ion-label>
+          <ion-label text-right>{{user.height}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Nationality:</ion-label>
+          <ion-label text-right>{{user.nationality}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Drinking:</ion-label>
+          <ion-label text-right>{{user.drinking}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Smoking:</ion-label>
+          <ion-label text-right>{{user.smoking}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label text-left item-start>Interests:</ion-label>
+          <ion-label text-right>{{user.interests}}</ion-label>
+        </ion-item>
+
+
+      </ion-list>
+
+        <ion-list no-lines *ngIf="type == 'business'" padding-top>
+
+          <ion-item>
+            <ion-label text-left item-start>Music Genre:</ion-label>
+            <ion-label text-right>{{user.genre}}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Age Group:</ion-label>
+            <ion-label text-right>{{user.ageGroup}}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Dress Code:</ion-label>
+            <ion-label text-right>{{user.dressCode}}</ion-label> </ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Capacity:</ion-label>
+            <ion-label text-right>{{user.capacity}}</ion-label></ion-item>
+
+          <ion-item>
+            <ion-label text-left item-start>Address:</ion-label>
+            <ion-label text-right>{{user.address}}</ion-label>
+          </ion-item>
+
+        </ion-list>
+
+
+
+      </ng-container>
+    </ion-list>
+  </div>
+
+</ion-content>

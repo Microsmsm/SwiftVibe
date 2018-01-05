@@ -1,0 +1,58 @@
+<!-- Generated template for the ClubPostComponent component -->
+<div class="venue animated slideInLeft"  *ngFor="let venue of dataService.venues"  [style.background-image]="' url('+venue.backgroundImage+')'" style="min-height: 35%" (click)="open(venue)">
+
+  <div class="seperator"></div>
+
+  <div style="height: 100%;">
+
+  <div class="venueInfo" style="height: 100%">
+
+      <div class="custom-avatar" padding-top >
+        <img src="{{venue.image}}"  style="object-fit: cover;"  />
+      </div>
+
+
+    <ion-item no-lines text-center  color="clear">
+
+      <h2 class="animated flipInX" style="font-size: 40px;">{{venue.name}}</h2>
+      <h3 style="font-size: 20px;"> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> </h3>
+
+    </ion-item>
+
+
+
+    <ion-grid>
+
+      <ion-row>
+
+        <ion-col col-12 text-right>
+          4500 Followers
+
+        </ion-col>
+
+
+      </ion-row>
+
+      <ion-row>
+
+       <ion-col col-6>
+
+       <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> 16.0 k &nbsp;
+     <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> 13.6 k
+
+       </ion-col>
+
+        <ion-col col-6 text-right>
+          215 Raters
+
+        </ion-col>
+
+
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  </div>
+
+</div>

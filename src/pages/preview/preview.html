@@ -1,0 +1,60 @@
+<ion-header class="transparentBG">
+    <ion-navbar>
+        <ion-title>PREVIEW</ion-title>
+    </ion-navbar>
+    <div class="seperator"></div>
+</ion-header>
+
+<ion-content class="preview">
+    <!-- Generated template for the ClubPostComponent component -->
+    <div class="post animated fadeIn" [style.background-image]="' url('+post.backgroundImage+')'">
+        <div class="postInfo">
+            <ion-item no-lines text-left color="clear">
+                <ion-avatar item-start>
+                    <img src="{{getAvatar(post.userCode)}}" style="object-fit: cover;">
+                </ion-avatar>
+
+                <p class="animated flipInX">{{getName(post.userCode)}}</p>
+                <p class="timeDisplay" item-end>
+                    <ion-icon name="sp-clock"></ion-icon>Now</p>
+            </ion-item>
+
+            <div *ngIf="image" class="backgroundImg">
+                <img src="{{post.image}}">
+            </div>
+
+            <div class="postRow" *ngIf="post.type == 'business'">
+                <h3 class="animated">{{post.title}}</h3>
+                <p class="animated flipInX">{{post.description}}</p>
+                <div class="postRowCount">
+                    <ion-icon name="eye"></ion-icon> {{post.viewCount}} k
+                </div>
+                <div class="postRowCount">
+                    <ion-icon name="sp-fire"></ion-icon> {{post.fireCount}} k
+                </div>
+            </div>
+
+            <div class="postRow" *ngIf="post.type == 'individual'">
+                <p class="animated flipInX">{{post.description}}</p>
+                <div class="postRowCount">
+                    <ion-icon name="sp-ice"></ion-icon>
+                    {{post.viewCount}} k
+                </div>
+                <div class="postRowCount">
+                    <ion-icon name="sp-fire"></ion-icon> {{post.fireCount}} k
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="removePostButs">
+        <div class="removePostButsInner" (click)="save();">
+            <ion-icon name="ios-leaf-outline"></ion-icon>
+            Post
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <div class="seperator"></div>
+</ion-footer>

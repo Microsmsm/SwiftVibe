@@ -1,0 +1,20 @@
+<ion-tabs color="black">
+    <ion-fab center bottom>
+        <button ion-fab color="light"><ion-icon name="camera" large></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <ion-tab [root]="tab1Root" tabTitle="" tabIcon="home"></ion-tab>
+    <div class="fancyButton">
+        <ion-tab [root]="tab2Root" tabTitle="" tabBadge="{{dataService.messageBadge}}" tabBadgeStyle="main" tabIcon="chatboxes"> </ion-tab>
+    </div>
+
+    <ion-tab [root]="tab3Root" tabTitle="" tabIcon=""></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="" tabIcon="heart"> </ion-tab>
+    <ion-tab [root]="tab4Root" tabTitle="" tabBadge="{{dataService.notificationBadge}}" tabBadgeStyle="sender" tabIcon="notifications"> </ion-tab>
+</ion-tabs>

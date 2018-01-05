@@ -1,0 +1,31 @@
+<ion-content class="login inputForms">
+    <ion-list text-center>
+        <img src="assets/imgs/login-white.png">
+
+        <p> Register today and start enjoying the <span>SwiftVibe</span> experience!</p>
+        
+        <ion-item>
+            <ion-input class="mailIcon" [(ngModel)]="username" type="email" placeholder="Email"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-input class="lockIcon" [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        
+        <div class="forgotPass">
+            <p (click)="signup();">Register</p>
+
+            <p (click)="resetpassword();">Forgot Password ?</p>
+        </div>
+                
+        <button color="main" ion-button (click)="login()">
+            LOGIN
+        </button>
+
+        <button color="facebook" ion-button (click)="login()">
+            LOGIN WITH FACEBOOK
+        </button>
+        <p class="pPolicy">By signing in to SwiftVibe, you agree to your <span>Terms & Conditions</span> & <span>Privacy Policy</span></p>
+    </ion-list>
+
+</ion-content>

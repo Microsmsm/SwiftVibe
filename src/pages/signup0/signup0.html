@@ -1,0 +1,30 @@
+<ion-header class="transparentBG">
+  <ion-navbar>
+    <ion-title>USER REGISTEATION</ion-title>
+  </ion-navbar>
+  <div class="seperator"></div>
+</ion-header>
+
+<ion-content class="login inputForms">
+  <div class="verticalAlignMiddle">
+    <div class="verticalAlignMiddleChild">
+      <ion-list text-center>
+        <img src="assets/imgs/plusIconSignup.png">
+        <h3>Create Account</h3>
+
+        <p>Register today and start enjoying the
+          <span>SwiftVibe</span> experience!</p>
+
+
+        <p>Choose your account type:</p>
+        <button color="individual" ion-button (click)="goToSignUpSteps()">
+          Individual
+        </button>
+        <button color="business" ion-button (click)="goToSignUpSteps()">
+          Business
+        </button>
+        
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

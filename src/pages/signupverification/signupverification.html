@@ -1,0 +1,27 @@
+<ion-header class="transparentBG">
+    <ion-navbar>
+        <ion-title>USER REGISTEATION</ion-title>
+    </ion-navbar>
+    <div class="seperator"></div>
+</ion-header>
+
+<ion-content >
+    <img src="assets/imgs/signUpverification.png">
+
+    <ion-list id="digits">
+            <ion-item *ngFor="let digit of [1,2,3,4,5]" class="digit">
+                    <ion-input ion-text color="dark" type="number" placeholder="*" ></ion-input>
+            </ion-item>
+    </ion-list>
+
+    <div class="welcoming">
+        <h6 ion-text color="main">WELCOME TO SWIFTVIBE</h6>
+        <p ion-text color="light">we sent you a verification <br> code to your mobile, please insert the code</p>
+    </div>    
+    <div class="bottomText">
+        <button class="appgradient" ion-button (click)="signupsteps()">
+        CONFIRM VERIFICATION CODE
+    </button>
+    </div>
+
+</ion-content>

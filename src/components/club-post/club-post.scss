@@ -1,0 +1,60 @@
+club-post {
+    .post {
+        display: inline-block;
+        //        /*min-height: 45%;*/
+        width: 100%;
+        background-color: rgba(11, 13, 25, 1);
+        background-size: cover !important;
+        background-position: center !important;
+        border-top: solid;
+        border-color: #000000;
+    }
+
+    .postInfo {
+        width: 100%;
+        min-height: 100%;
+        /*background: rgba(62, 28, 107, 0.40);*/
+        background: rgba(11, 13, 25, 0.8);
+        background-size: cover !important;
+        background-position: center !important;
+        text-shadow: 0px 1px 3px #000;
+        letter-spacing: 0.7px;
+        
+        ion-item {
+            padding-left: 5px
+        }
+        ion-avatar {
+            img, .userImage {
+                border: 2px solid #fff;
+                border-radius: 50px;
+                background-size: cover !important;
+                background-position: center !important;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .newsDetails {
+            padding-top: 0px;
+            h3{
+                padding-top: 40px;
+                margin-bottom: 0px;
+            }
+            &.business p{
+                margin-top: 0px;
+            }
+        }
+        .commentHere {
+            padding: 0 10px 20px 10px;
+            ion-input {
+                border-radius: 0;
+                width: 100%;
+                color: #ffffff;
+                border: 1px solid #5d5d5e;
+            }
+            input {
+                margin: 0;
+                padding: 5px 10px;
+            }
+        }
+    }
+}

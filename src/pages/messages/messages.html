@@ -1,0 +1,41 @@
+<ion-header class="transparentBG">
+    <ion-navbar>
+        <ion-title>MESSAGES</ion-title>
+    </ion-navbar>
+    <div class="seperator"></div>
+</ion-header>
+
+<ion-content class="messages">
+    <ion-segment [(ngModel)]="segment" color="dark">
+        <ion-segment-button value="chats">
+            CHATS
+            <div class="seperator"></div>
+        </ion-segment-button>
+        <ion-segment-button value="active">
+            ACTIVE NOW
+            <div class="seperator"></div>
+        </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="segment" padding-top>
+        <ion-list no-lines *ngSwitchCase="'chats'">
+            <ion-item *ngFor="let conversation of conversations" (click)="openConversations(conversation)">
+                <ion-avatar item-start large>
+                    <img src="{{getAvatar(conversation)}}" style="object-fit: cover;">
+                </ion-avatar>
+                <h2>{{getName(conversation)}}</h2>
+                <p>{{conversation.lastMessage}}</p>
+                <p class="timedis" text-right>2 mins ago</p>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'active'">
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="img/thumbnail-kitten-1.jpg">
+                </ion-thumbnail>
+                <h2>Luna</h2>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

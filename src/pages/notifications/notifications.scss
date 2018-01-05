@@ -1,0 +1,48 @@
+page-notifications {
+  .toolbar-background {
+    background: #000; /* For browsers that do not support gradients */
+  }
+      
+  .notifications{
+    background-color: #000000;
+     
+      h2{
+          font-size: 14px !important;
+          display: inline-block;
+      }
+      .eventPosts{
+          color: #69c1d3;
+          display:initial;
+      }
+      p{
+          font-size: 12px;
+      }
+       ion-item{
+           border-bottom: 2px solid #11293b !important;
+            border-radius: 0px;
+            background: none;
+            }
+  
+       
+  }
+    
+  h2{
+    color: #ffffff;
+  }
+
+  .item{
+    background-color: transparent;
+  }
+    
+   img {
+         width: 50px !important;
+         height: 50px !important;
+         border: 1px solid #fff;
+         
+    }
+    
+.timedis{
+            font-size: 12px;
+            padding-top: 8px;
+        }
+}

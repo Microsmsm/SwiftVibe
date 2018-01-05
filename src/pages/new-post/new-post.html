@@ -1,0 +1,77 @@
+<ion-header class="transparentBG">
+    <ion-navbar>
+        <ion-title>POST</ion-title>
+    </ion-navbar>
+    <div class="seperator"></div>
+</ion-header>
+
+
+<ion-content class="newPost">
+
+    <ion-item class="searchForm">
+        <ion-input type="text" [(ngModel)]="text" placeholder="Whats on your mind Michael?"></ion-input>
+        <img item-end src="images/newPost-white.png">
+    </ion-item>
+
+    <div class="visibleRow">
+        <ion-icon name="ios-eye-outline"></ion-icon>
+        <ion-select [(ngModel)]="visible">
+            <ion-option value="Public" selected>Public</ion-option>
+            <ion-option value="Private">Private</ion-option>
+        </ion-select>
+    </div>
+    
+    <div class="pictureOptions">
+        <div class="pictureOptionsCol" (click)="promptPicture()">
+            <div class="pictureOptionsColInner">
+                <ion-icon class="bigIcon" name="camera" color="light"></ion-icon>
+                <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
+                <p>PHOTO/VIDEO</p>
+            </div>
+        </div>
+        
+        <div class="pictureOptionsCol">
+            <div class="pictureOptionsColInner">
+                <ion-icon class="bigIcon" name="happy" color="light"></ion-icon>
+                <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
+                <p>CREATE MEME</p>
+            </div>
+        </div>
+        
+        <div class="pictureOptionsCol">
+            <div class="pictureOptionsColInner">
+                <ion-icon class="bigIcon" name="sp-checkIn" color="light"></ion-icon>
+                <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
+                <p>CHECK IN</p>
+            </div>
+        </div>
+    </div>   
+    
+    
+    <div class="backgroundImg">
+        <img *ngIf="background" src="{{background}}" (click)="getPicture('Background')">
+    </div>
+
+    <div class="backgroundImg">
+        <img *ngIf="image" src="{{image}}" (click)="getPicture('Image')">
+    </div>
+    
+    <div class="removePostButs">
+        <div *ngIf="background" class="removePostButsInner" (click)="removeBackground();">
+            <ion-icon name="ios-trash-outline"></ion-icon>
+            Remove Background
+        </div>
+        <div *ngIf="image" class="removePostButsInner" (click)="removePhoto();">
+            <ion-icon name="ios-trash-outline"></ion-icon>
+            Remove Image
+        </div>
+        <div class="removePostButsInner" (click)="preview();">
+            <ion-icon name="ios-leaf-outline"></ion-icon>
+            Preview
+        </div>        
+    </div>
+</ion-content>
+
+<ion-footer>
+    <div class="seperator"></div>
+</ion-footer>

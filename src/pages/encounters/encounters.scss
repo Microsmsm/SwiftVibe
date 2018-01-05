@@ -1,0 +1,98 @@
+page-encounters {
+  .toolbar-background {
+    background: #000; /* For browsers that do not support gradients */
+
+  }
+
+  .toolbar-title{
+    color: #fff;
+    text-align: center;
+    font-family: gilroy-light;
+  }
+
+
+  .encounters{
+background-color: #000000;
+    color: #ffffff;
+    font-family: gilroy;
+    text-align: center;
+
+    height: 100%;
+
+    .people{
+      color: #ffffff;
+
+      display: inline-block;
+      min-height: 40%;
+      width: 50%;
+      border-radius: 10px;
+      border-color: #000000;
+      border-style: solid;
+
+      background-size: cover;
+      background-position: top;
+
+      scroll-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ion-grid {
+        padding: 0;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.50);
+      }
+
+      ion-row {
+        flex: 1;
+        height: 100%;
+
+      }
+
+      ion-col{
+        bottom: 0;
+      }
+
+    }
+
+
+  }
+
+  .custom-avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .encounter-avatar {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border-color: #ffffff;
+    border: solid;
+
+
+  }
+
+  .user-avatar {
+    height: 80px;
+    width: 80px;
+
+  }
+
+  .seperator{
+text-align: center;
+    height: 100%;
+    font-family: gilroy;
+    background: #0fcff4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #0fcff4 , #782ca8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0fcff4, #782ca8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0fcff4, #782ca8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0fcff4 , #782ca8); /* Standard syntax */
+  }
+
+}

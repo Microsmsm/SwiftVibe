@@ -1,0 +1,198 @@
+<!--
+  Generated template for the EventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar padding-left padding-right>
+
+
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+      <ion-icon end style="font-size: 30px;" name="sp-event" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="event" >
+
+  <div class="post animated slideInDown"   [style.background-image]="' url('+event.backgroundImage+')'" >
+
+
+    <div class="postInfo">
+
+      <h2 class="animated bounceIn" text-center>{{event.name}}</h2>
+
+
+<div class="eventImage">
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>   <img src="{{event.image}}" style="object-fit: cover;" (click)="openImage(event.image)"></ion-col>
+    <ion-col></ion-col>
+
+  </ion-row>
+  </div>
+
+      <ion-grid>
+        <ion-row (click)="openProfile()" >
+          <ion-item no-lines text-left  clear>
+            <ion-avatar item-start >
+              <img src="{{user.image}}" style="object-fit: cover;">
+            </ion-avatar>
+
+            <h2 class="animated flipInX">{{user.name}}</h2>
+
+          </ion-item>
+        </ion-row>
+
+        <ion-row (click)="openProfile()" >
+          <ion-item no-lines text-left  clear>
+
+            <p item-end >
+              <small>
+                <ion-icon style="font-size: 20px;" name="eye" color="light"></ion-icon> {{event.viewCount}} k
+                &nbsp;
+                <ion-icon style="font-size: 20px;" name="sp-ice" color="light"></ion-icon> 16.3 k
+                &nbsp;
+                <ion-icon style="font-size: 20px;" name="sp-fire" color="light"></ion-icon> {{event.engageCount}} k
+              </small>
+            </p>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6></ion-col>
+          <ion-col col-6></ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </div>
+    <div class="seperator"></div>
+
+  </div>
+
+  <ion-grid  class="post animated slideInUp">
+
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Event Date:</p></ion-col>
+    <ion-col col-7><p>{{event.date}}  </p></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Time:</p></ion-col>
+    <ion-col col-7><p>{{event.startTime}} - {{event.endTime}}  </p></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Venue Address:</p></ion-col>
+    <ion-col col-7><p>{{event.where}}</p></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Music Genre:</p></ion-col>
+    <ion-col col-7><p>{{event.genre}}</p></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Event Description:</p></ion-col>
+    <ion-col col-7><p>{{event.details}}</p></ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Dress Code:</p></ion-col>
+    <ion-col col-7><p>{{event.dressCode}}</p></ion-col>
+  </ion-row>
+    <ion-row>
+    <ion-col col-5><p style="font-weight: bold;">Guestlist Expiry:</p></ion-col>
+    <ion-col col-7><p>12:00 AM</p></ion-col>
+  </ion-row>
+
+    <ion-row padding-top padding-bottom>
+      <ion-col col-4>
+        <button ion-fab large color="black"  text-center  >
+          <img src="images/cubes.png" style="object-fit: cover;">
+
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-fab large color="black"  text-center  >
+          <img src="images/share.png" style="object-fit: cover;">
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-fab large color="black"  text-center  >
+          <img src="images/flame.png" style="object-fit: cover;">
+        </button>
+      </ion-col>
+    </ion-row>
+
+    </ion-grid>
+
+
+  <div class="seperator" ></div>
+
+  <ion-grid padding-top >
+
+  <ion-row >
+
+    <ion-col col-2>
+      <img src="images/ticket.png" style="object-fit: cover;">
+    </ion-col>
+
+    <ion-col col-10 text-left>
+      <h2>BOOK NOW</h2>
+    </ion-col>
+
+
+  </ion-row>
+
+
+  <ion-row >
+
+    <ion-col text-center>
+      <p ><small>DAYS</small></p>
+    </ion-col>
+
+    <ion-col text-center>
+      <p><small>HOURS</small></p>
+    </ion-col>
+
+    <ion-col text-center>
+      <p ><small>MINUTES</small></p>
+    </ion-col>
+
+    <ion-col text-center>
+      <p><small>SECONDS</small></p>
+    </ion-col>
+
+
+  </ion-row>
+
+    <ion-row >
+
+      <ion-col text-center>
+        <h2>05</h2>
+      </ion-col>
+
+      <ion-col text-center>
+        <h2>23</h2>
+      </ion-col>
+
+      <ion-col text-center>
+        <h2>35</h2>
+      </ion-col>
+
+      <ion-col text-center>
+        <h2>06</h2>
+      </ion-col>
+
+
+    </ion-row>
+
+    </ion-grid>
+
+</ion-content>

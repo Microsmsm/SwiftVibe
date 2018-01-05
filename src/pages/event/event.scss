@@ -1,0 +1,67 @@
+page-event {
+
+  .toolbar-title {
+    color: #000;
+    text-align: center;
+    width: 100%;
+    font-family: gilroy;
+  }
+
+
+  .event {
+
+    color:#fff;
+
+    background-color: #161925;
+
+    .post {
+      display: inline-block;
+      min-height: 35%;
+      width: 100%;
+      background-color: transparent;
+
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    .postInfo {
+      width: 100%;
+      min-height: 100%;
+      background: rgba(62, 28, 107, 0.40);
+      padding-top: 10%;
+
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+
+      h2{
+        color: #fff;
+      }
+
+    }
+
+    .item{
+      background-color: transparent;
+    }
+  }
+
+  .grid{
+    button{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .eventImage{
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+      border-radius: 5px;
+      border-color: #ffffff;
+      border: solid;
+    }
+  }
+
+}

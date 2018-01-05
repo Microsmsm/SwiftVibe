@@ -1,0 +1,86 @@
+signupverification {
+   ion-content {
+    // background: url(../../assets/imgs/bglogin.jpg) !important;
+    // background-size: cover !important;
+    // background-position: center !important;
+    background: #0fcff4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(bottom, #191b28 , #000000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top, #191b28, #000000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top, #191b28, #000000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #191b28 , #000000); /* Standard syntax */ 
+   }
+    .scroll-content {
+        
+        #digits{
+            width:100%;
+            padding:0;
+            margin: 0 auto;
+            text-align: center;
+            ion-item {
+                border-top:0 !important;
+            };
+            .digit{
+                padding:0 !important;
+                padding-left: 0;
+                display: inline-block;
+                width: 45px; 
+                margin:  5px ;
+                background: transparent;
+                .item-inner{
+                padding:0 !important;
+                border-radius: 0;
+                
+            background: rgba(255,255,255,.01);
+                }
+                .text-input{
+                    padding:0 !important;
+                    margin: 0 !important;
+                    font-size: 3rem;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    color: white;
+                }
+                .text-input::-webkit-input-placeholder{
+
+                    color: rgba(255,255,255,.1);
+                    font-size: 4rem;
+                }
+
+            }
+        }
+        text-align: center;
+        img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            max-width: 100px;
+        }
+
+        .bottomText {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            h6 {
+                font-size: 16px;
+                color: #11cef4;
+                letter-spacing: 0.8px;
+            }
+            p {
+                text-transform: uppercase;
+                font-size: 12px;
+                line-height: 20px;
+            }
+            button {
+                margin: 0px;
+                font-size: 15px;
+                width: 100%;
+                padding: 0 30px !important;
+                letter-spacing: 1px;
+            }
+        }
+        .welcoming {
+            position: absolute;
+            bottom: 100px;
+            width: 100%;
+        }
+}}

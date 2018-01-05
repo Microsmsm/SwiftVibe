@@ -1,0 +1,54 @@
+venue {
+
+  .venue{
+    display: inline-block;
+    min-height: 35%;
+    width: 100%;
+    background-color: transparent;
+
+
+    background-size: cover;
+    background-position: center;
+
+
+
+
+  }
+
+
+
+  .venueInfo {
+    width: 100%;
+min-height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+
+
+    background-size: cover;
+    background-position: center;
+    color:#fff;
+
+    .custom-avatar {
+
+      display: block;
+      margin: 0 auto;
+
+      img{
+        border-radius: 50%;
+        height: 80px;
+        width:80px;
+
+      }
+
+
+      height: 80px;
+      width:80px;
+
+
+    }
+
+
+  }
+
+
+
+}

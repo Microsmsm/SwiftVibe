@@ -1,0 +1,364 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$white: #ffffff;
+$black: #222222;
+$gilroyLight: gilroy-light;
+$gilroy: gilroy;
+
+
+@font-face {
+  font-family: 'gilroy';
+  src: url('../assets/fonts/Gilroy-ExtraBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroy-light';
+  src: url('../assets/fonts/Gilroy-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+ion-icon {
+  &[class*="sp-"] {
+    // Instead of using the font-based icons
+    // We're applying SVG masks
+    mask-size: cover;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  // custom icons
+  &[class*="sp-encounter"] {
+    mask-image: url(../images/encounter.png);
+  }
+
+  &[class*="sp-share"] {
+    mask-image: url(../images/share.png);
+  }
+
+  &[class*="sp-event"] {
+    mask-image: url(../images/event.png);
+  }
+  &[class*="sp-venue"] {
+    mask-image: url(../images/venue.png);
+  }
+  &[class*="sp-block"] {
+    mask-image: url(../images/block.svg);
+  }
+  &[class*="sp-privacy"] {
+    mask-image: url(../images/privacy.png);
+  }
+  &[class*="sp-manage"] {
+    mask-image: url(../images/manage.png);
+  }
+  &[class*="sp-terms"] {
+    mask-image: url(../images/terms.png);
+  }
+  &[class*="sp-ice"] {
+    mask-image: url(../images/cubes.png);
+  }
+  &[class*="sp-fire"] {
+    mask-image: url(../images/fire.png);
+  }
+  &[class*="sp-checkIn"] {
+    mask-image: url(../images/checkIn.png);
+  }
+  &[class*="sp-post"] {
+    mask-image: url(../images/post.png);
+  }
+  &[class*="sp-account"] {
+    mask-image: url(../images/account.png);
+  }
+  &[class*="sp-settings"] {
+    mask-image: url(../images/settings.png);
+  }
+  &[class*="sp-beer"] {
+    mask-image: url(../images/beer.png);
+  }
+  &[class*="sp-clock"] {
+    mask-image: url(../images/clock.png);
+  }
+
+
+}
+
+.darkgradient{
+    background: #0fcff4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #191b28 , #000000); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #191b28, #000000); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #191b28, #000000); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #191b28 , #000000); /* Standard syntax */
+}
+.appgradient{
+    background: #0fcff4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #0fcff4 , #782ca8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0fcff4, #782ca8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0fcff4, #782ca8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0fcff4 , #782ca8); /* Standard syntax */
+}
+.toolbar-background, .seperator {
+    background: #0fcff4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #0fcff4 , #782ca8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0fcff4, #782ca8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0fcff4, #782ca8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0fcff4 , #782ca8); /* Standard syntax */
+}
+.transparentBG .toolbar-background{
+    background: transparent;
+}
+.seperator{
+    height: 3px;
+}
+
+
+.tab-button {
+    background: transparent !important;
+    .icon{
+        color: #f4f4f4;
+    }
+}
+
+p{
+    font-family: $gilroyLight;
+}
+
+h1,h2,h3,h4,h5,button{
+    font-family: $gilroy;
+}
+
+
+
+
+.menu{
+    button{
+        border:solid;
+        border-color: rgba(143, 73, 255, 0.40);
+    }
+}
+
+
+
+
+/*Shiva*/
+
+
+.scroll-content{
+	overflow-y:auto;
+}
+.content-ios:not([no-bounce]) > .scroll-content::after{
+	top:0;
+}
+.content-ios:not([no-bounce]) > .scroll-content::before{
+	bottom:0px;
+}
+
+
+.inputForms {
+    background: url(../assets/imgs/bglogin.jpg);
+    background-size: cover !important;
+    background-position: center !important;
+    ion-list {
+        padding: 30px 20px;
+        margin: auto!important;
+        text-align: center;
+        max-width: 400px;
+        border-radius: 5px;
+        img {
+            max-width: 160px;
+            margin: 0;
+        }
+        ion-item {
+            padding: 0px !important;
+            border: none;
+            background: none !important;
+            min-height: 36px;
+            margin: 15px 0;
+            .item-inner {
+                border: none !important;
+                box-shadow: none !important;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 10px;
+            }
+            .mailIcon:before,
+            .lockIcon:before, .birthdayIcon:before, .userIcon:before {
+                content: '';
+                background: url(../assets/imgs/mailIcon.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 20px;
+                height: 24px;
+                position: absolute;
+                top: -5px;
+                left: 10px;
+            }
+            .lockIcon:before {
+                background: url(../assets/imgs/lockIcon.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .userIcon:before {
+                background: url(../assets/imgs/userIcon.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .birthdayIcon:before {
+                background: url(../assets/imgs/birthdayIcon.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            ion-input {
+                font-size: 14px;
+                color: #fff;
+                font-weight: 400;
+                position: relative;
+                padding-left: 45px;
+                input {
+                    font-weight: 400;
+                    border: none;
+                    margin: 0px 8px;
+                    outline: none;
+                    &:focus {
+                        outline: none;
+                    }
+                    
+                    
+                    &::-moz-placeholder{
+                        color: $white;
+                    }
+                    &:-ms-input-placeholder{
+                        color: $white;
+                    }
+                    &::-webkit-input-placeholder{
+                        color: $white;
+                    }
+                    
+                }
+            }
+            
+        }
+        .item-input.item-input-has-focus:last-child{
+            border: none !important;
+            box-shadow: none !important;
+        }
+        .genderInfo{
+            display: inline-block;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .radioIcon{
+            width: 40%;
+            text-align: center;
+            display: inline-block;
+            margin: 0;
+            color: #fff;
+            .item-inner{
+                background: none !important;
+            }
+        }
+        
+        p{
+            line-height: 20px;
+        }
+        .pPolicy {
+            font-size: 12px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: #1a1c2a;
+            bottom: 0;
+            padding: 10px 30px;
+            margin-bottom: 0px;
+        }
+        button {
+            width: 80%;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            span {
+                color: #fff;
+                font-weight: 400;
+                font-size: 13px;
+            }
+        }
+        .forgotPass {
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 3px;
+            p {
+                width: 50%;
+                float: left;
+                font-size: 12px;
+                border-right: 1px solid #fff;
+                cursor: pointer;
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
+    .list-ios > .item-block:first-child {
+        border: none;
+    }
+}
+
+
+.verticalAlignMiddle{
+	display: table;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+	
+	.verticalAlignMiddleChild{
+		display: table-cell;
+		vertical-align: middle;
+		padding:0 5px;
+	}
+}
+.toolbar-title{
+    color: #fff;
+    text-align: center;
+    font-family: $gilroyLight;
+    font-size: 16px;
+    padding: 7px 0 0 0;
+}
+ion-header{
+    .back-button.bar-button{
+        margin: 0;
+        color: #fff !important;
+    }
+}
+
+.alert-head:empty, .alert-message:empty{
+    display: none;
+}
+
+/*.alert-head{
+    padding-bottom: 10px !important;
+}*/

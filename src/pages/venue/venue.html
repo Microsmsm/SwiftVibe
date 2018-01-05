@@ -1,0 +1,164 @@
+<!--
+  Generated template for the VenuePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="venue" >
+
+  <div class="venueHead" [style.background-image]="' url('+venue.backgroundImage+')'"  >
+
+    <div class="venueInfo " style="min-height: 100%"  >
+
+      <div style="height: 25%" >
+
+        <img src="images/placeholder2.png"  style="object-fit: cover;" />
+
+      </div>
+
+      <div style="height: 75%">
+
+        <div padding-left>
+          <div class="custom-avatar" >
+            <img src="{{venue.image}}"  style="object-fit: cover;"  />
+          </div>
+        </div>
+
+        <ion-grid style="height: 100%" >
+
+
+          <ion-row class="animated flipInX">
+            <h2 text-left >&nbsp;</h2>
+          </ion-row>
+
+
+
+          <ion-row >
+            <ion-item no-lines text-left>
+              <button color="light" item-end outline  ion-button class="animated slideInLeft" ><ion-icon name="chatbubbles"></ion-icon> &nbsp; Message</button>
+              <button color="light" item-end outline  ion-button class="animated slideInRight" > <ion-icon name="person-add"></ion-icon> &nbsp; Following</button>
+
+            </ion-item>
+          </ion-row>
+
+
+
+          <ion-row >
+            <h2 text-left >{{venue.name}}</h2>
+          </ion-row>
+
+          <ion-row >
+            <ion-col col-6>
+              <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon>
+
+            </ion-col>
+
+            <ion-col col-6 text-right>
+              4500 Followers
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row >
+
+            <ion-slides   autoplay="2000" loop="true" speed="2000" slidesPerView="4.5" spaceBetween="2" >
+
+              <ion-slide >
+                <img src="images/gallery.jpg">
+              </ion-slide>
+
+              <ion-slide >
+                <img src="images/gallery1.jpg" >
+              </ion-slide>
+
+              <ion-slide>
+                <img src="images/gallery2.jpg" >
+              </ion-slide>
+
+              <ion-slide>
+                <img src="images/club1.png" >
+              </ion-slide>
+
+            </ion-slides>
+
+          </ion-row>
+
+
+
+
+        </ion-grid>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  <div padding-top padding-bottom >
+    <ion-segment [(ngModel)]="segment" color="light">
+      <ion-segment-button class="animated zoomInUp" value="events" style="font-family: gilroy;">
+        Events
+      </ion-segment-button>
+      <ion-segment-button class="animated zoomInUp" value="news" style="font-family: gilroy;">
+        News Feed
+      </ion-segment-button>
+      <ion-segment-button class="animated zoomInUp" value="gallery" style="font-family: gilroy;">
+        Gallery
+      </ion-segment-button>
+      <ion-segment-button class="animated zoomInUp" value="info" style="font-family: gilroy;">
+        Info
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch] ="segment">
+
+    <ion-list *ngSwitchCase="'events'" no-lines>
+      <ng-container>
+
+      </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'news'" no-lines>
+      <ng-container>
+
+        <club-post></club-post>
+      </ng-container>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'gallery'" no-lines>
+
+      <div class="gallery"    *ngFor="let image of dataService.images" [style.background-image]="' url('+image+')'">
+        <ion-row style="min-height: 100%;">
+          <ion-col col-12 text-right padding >
+            <img src="images/placeholder2.png" >
+
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'info'" no-lines>
+      <ng-container >
+
+      </ng-container>
+    </ion-list>
+  </div>
+
+</ion-content>
