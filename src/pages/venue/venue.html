@@ -21,7 +21,7 @@
 
       <div style="height: 25%" >
 
-        <img src="images/placeholder2.png"  style="object-fit: cover;" />
+        <img src="assets/images/placeholder2.png"  style="object-fit: cover;" />
 
       </div>
 
@@ -73,19 +73,19 @@
             <ion-slides   autoplay="2000" loop="true" speed="2000" slidesPerView="4.5" spaceBetween="2" >
 
               <ion-slide >
-                <img src="images/gallery.jpg">
+                <img src="assets/images/gallery.jpg">
               </ion-slide>
 
               <ion-slide >
-                <img src="images/gallery1.jpg" >
+                <img src="assets/images/gallery1.jpg" >
               </ion-slide>
 
               <ion-slide>
-                <img src="images/gallery2.jpg" >
+                <img src="assets/images/gallery2.jpg" >
               </ion-slide>
 
               <ion-slide>
-                <img src="images/club1.png" >
+                <img src="assets/images/club1.png" >
               </ion-slide>
 
             </ion-slides>
@@ -143,10 +143,10 @@
 
     <ion-list *ngSwitchCase="'gallery'" no-lines>
 
-      <div class="gallery"    *ngFor="let image of dataService.images" [style.background-image]="' url('+image+')'">
+      <div class="gallery"    *ngFor="let image of dataService.assets/images" [style.background-image]="' url('+image+')'">
         <ion-row style="min-height: 100%;">
           <ion-col col-12 text-right padding >
-            <img src="images/placeholder2.png" >
+            <img src="assets/images/placeholder2.png" >
 
           </ion-col>
         </ion-row>

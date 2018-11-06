@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar class="searchForm">
-        <ion-input [(ngModel)]="searchTerm" type="text" placeholder="Search Here"></ion-input>
+        <ion-input [(ngModel)]="searchTerm" type="text" placeholder="Search Here" (keyup.enter)="search(searchTerm)" autofocus></ion-input>
         <ion-buttons end>
             <button ion-button icon-only (click)="search(searchTerm)">
         <ion-icon end style="font-size: 30px;" name="search" color="light" ></ion-icon>
@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content class="search">
-    <ion-list no-lines>
+    <ion-list no-lines *ngIf="users.length">
         <ion-list-header>
             <h2>FRIENDS</h2>
         </ion-list-header>
@@ -25,7 +25,7 @@
         </ion-item>
     </ion-list>
 
-    <ion-list no-lines>
+    <ion-list no-lines *ngIf="venues.length">
         <ion-list-header>
             <h2>VENUES</h2>
         </ion-list-header>
@@ -38,7 +38,7 @@
         </ion-item>
     </ion-list>
 
-    <ion-list no-lines>
+    <ion-list no-lines *ngIf="events.length">
         <ion-list-header>
             <h2>EVENTS</h2>
         </ion-list-header>

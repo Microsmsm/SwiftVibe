@@ -21,8 +21,8 @@ import { SettingsPage } from '../settings/settings';
 })
 export class MenuPage {
 
-  options: Array<string> = ['Venues','Events','Bookings','Grab a Drink','Meet The Star','My Account','Settings','Contact Us','Share App'];
-  menuIcons: Array<string> = ['sp-venue','sp-event','pricetag','sp-beer','star-outline','sp-account','sp-settings','paper-plane','sp-share'];
+  options: Array<string> = ['Venues','Events','Bookings','Grab a Drink','Meet The Star','My Account','Friends','Contact Us','Share App'];
+  menuIcons: Array<string> = ['sp-venue','sp-event','pricetag','sp-beer','star-outline','sp-account','people','paper-plane','sp-share'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService) {
   }

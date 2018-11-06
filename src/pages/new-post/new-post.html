@@ -10,7 +10,7 @@
 
     <ion-item class="searchForm">
         <ion-input type="text" [(ngModel)]="text" placeholder="Whats on your mind Michael?"></ion-input>
-        <img item-end src="images/newPost-white.png">
+        <img item-end src="assets/images/newPost-white.png">
     </ion-item>
 
     <div class="visibleRow">
@@ -38,13 +38,25 @@
             </div>
         </div>
         
-        <div class="pictureOptionsCol">
-            <div class="pictureOptionsColInner">
-                <ion-icon class="bigIcon" name="sp-checkIn" color="light"></ion-icon>
-                <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
-                <p>CHECK IN</p>
-            </div>
-        </div>
+        <!--start ng-login-->
+        <ng-container *ngIf="!userType || userType !== 'business'">
+                <div class="pictureOptionsCol">
+                        <div class="pictureOptionsColInner">
+                            <ion-icon class="bigIcon" name="sp-checkIn" color="light"></ion-icon>
+                            <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
+                            <p>CHECK IN</p>
+                        </div>
+                    </div>
+        </ng-container>
+        <ng-container *ngIf="userType === 'business'">
+                <div class="pictureOptionsCol" (click)="createEvent()">
+                        <div class="pictureOptionsColInner">
+                            <ion-icon class="bigIcon" name="disc" color="light"></ion-icon>
+                            <ion-icon class="plusIcon" name="add" color="light"></ion-icon>
+                            <p>CREATE EVENT</p>
+                        </div>
+                    </div>
+        </ng-container>
     </div>   
     
     

@@ -17,8 +17,18 @@
         </ion-segment-button>
     </ion-segment>
 
-    <div [ngSwitch]="segment" padding-top>
+    <div [ngSwitch]="segment">
         <ion-list no-lines *ngSwitchCase="'chats'">
+            <p ion-text color="light">Recent Chats</p>
+            <ion-scroll scrollX="true">
+                <ion-item *ngFor="let conversation of conversations" class="scroll-item">
+                    <ion-avatar>
+                        <ion-badge color="secondary">•</ion-badge>
+                        <img src="{{getAvatar(conversation)}}" />
+                    </ion-avatar>
+                    <h2 text-center>{{getName(conversation).split(' ')[0]}}</h2>
+                </ion-item>
+            </ion-scroll>
             <ion-item *ngFor="let conversation of conversations" (click)="openConversations(conversation)">
                 <ion-avatar item-start large>
                     <img src="{{getAvatar(conversation)}}" style="object-fit: cover;">
@@ -32,7 +42,7 @@
         <ion-list *ngSwitchCase="'active'">
             <ion-item>
                 <ion-thumbnail item-start>
-                    <img src="img/thumbnail-kitten-1.jpg">
+                    <img src="assets/img/thumbnail-kitten-1.jpg">
                 </ion-thumbnail>
                 <h2>Luna</h2>
             </ion-item>

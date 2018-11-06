@@ -1,19 +1,20 @@
 page-menu {
 
-  .menu{
-    background-color: rgba(123,105,169, 0.90);
-    color:#fff;
-
-
-
-    button{
-      border:solid;
-      border-color: rgba(143, 73, 255, 0.40);
-    }
-
-
+  .niceborder{
+    border: solid;
+    border-color: #402674;
+    border-radius: 100%;
   }
-
+  .menu{
+   // background-color: rgba(123,105,169, 1);
+    background: url(../assets/images/menubg.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    color:#fff;
+    button{
+        border:none;
+    }
+}
   .menuOption{
     display: inline-block;
     min-height: 40%;
@@ -21,13 +22,16 @@ page-menu {
     background-color: transparent;
     text-align: center;
 
+    .option-text{
+      margin-top: 0;
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+
     button{
       margin-left: auto;
       margin-right: auto;
-
-        border:solid;
-        border-color: rgba(143, 73, 255, 0.40);
-
+      margin-bottom: 0;
     }
 
   }

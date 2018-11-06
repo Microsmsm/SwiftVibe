@@ -16,7 +16,7 @@
                 <button color="individual" ion-button (click)="nextstep()">
                     Individual
                 </button>
-                <button color="business" ion-button (click)="nextstep()">
+                <button color="business" ion-button (click)="openBusinessSignup()">
                     Business
                 </button>
                 <button margin-top class="next" color="secondary" ion-button (click)="nextstep()">
@@ -25,185 +25,326 @@
             </ion-list>
 
         </ion-slide>
-
-        <ion-slide>
-            <form>
-                <div class="profilePicUpload">
-                    <ion-icon name="ios-camera"></ion-icon>
-                    <p>Add Photo</p>
-                </div>
-
-                <ion-list text-center>
-                    <ion-item>
-                        <ion-input class="userIcon" type="text" placeholder="Name"></ion-input>
-                    </ion-item>
-                    <ion-item>
-                        <ion-input class="birthdayIcon" type="text" placeholder="Birthday"></ion-input>
-                    </ion-item>
-                    <div class="genderInfo" radio-group>
-                        <ion-item class="radioIcon">
-                            <ion-radio name="gender" checked="true" value="Male"></ion-radio>
-                            <ion-label>Male</ion-label>
-                        </ion-item>
-
-                        <ion-item class="radioIcon">
-                            <ion-radio name="gender" value="Female"></ion-radio>
-                            <ion-label>Female</ion-label>
-                        </ion-item>
+        <!--start ng-logic-->
+        <ng-container *ngIf="!user || user?.type !== 'business'">
+            <ion-slide>
+                <form>
+                    <div class="profilePicUpload">
+                        <ion-icon name="ios-camera"></ion-icon>
+                        <p>Add Photo</p>
                     </div>
+
+                    <ion-list text-center>
+                        <ion-item>
+                            <ion-input class="userIcon" type="text" placeholder="Name"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input class="birthdayIcon" type="text" placeholder="Birthday"></ion-input>
+                        </ion-item>
+                        <div class="genderInfo" radio-group>
+                            <ion-item class="radioIcon">
+                                <ion-radio name="gender" checked="true" value="Male"></ion-radio>
+                                <ion-label>Male</ion-label>
+                            </ion-item>
+
+                            <ion-item class="radioIcon">
+                                <ion-radio name="gender" value="Female"></ion-radio>
+                                <ion-label>Female</ion-label>
+                            </ion-item>
+                        </div>
+                        <button class="next" color="main" ion-button (click)="nextstep()">
+                            Next
+                        </button>
+                    </ion-list>
+                </form>
+            </ion-slide>
+
+            <ion-slide>
+                <div class="musicSelection">
+                    <p>For best experience, please select your music genre preference</p>
+                    <ion-searchbar placeholder="Search Music Genre"></ion-searchbar>
+
+                    <div class="musicList" style="background:url(assets/imgs/musicBG1.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>HipHop</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
+
+                    <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>Trap</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
+
+                    <div class="musicList" style="background:url(assets/imgs/musicBG3.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>R &amp; B</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
+
+                    <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>electro</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
+
                     <button class="next" color="main" ion-button (click)="nextstep()">
                         Next
                     </button>
-                </ion-list>
-            </form>
-        </ion-slide>
-
-        <ion-slide>
-            <div class="musicSelection">
-                <p>For best experience, please select your music genre preference</p>
-                <ion-searchbar placeholder="Search Music Genre"></ion-searchbar>
-
-                <div class="musicList" style="background:url(assets/imgs/musicBG1.jpg)">
-                    <div class="musicListInner">
-                        <img src="../assets/imgs/musicIcon.png">
-                        <h6>HipHop</h6>
-                        <div class="seperator"></div>
-                    </div>
                 </div>
+            </ion-slide>
 
-                <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
-                    <div class="musicListInner">
-                        <img src="../assets/imgs/musicIcon.png">
-                        <h6>Trap</h6>
-                        <div class="seperator"></div>
+            <ion-slide>
+                <form class="moreInfoabout">
+                    <p>Share some more info about you
+                        <span>You may skip this step for now</span>
+                    </p>
+                    <ion-list text-center>
+                        <ion-item>
+                            <ion-label>Nationality</ion-label>
+                            <ion-select>
+                                <ion-option value="Indian">Indian</ion-option>
+                                <ion-option value="Italian" selected>Italian</ion-option>
+                                <ion-option value="German">German</ion-option>
+                                <ion-option value="Australian">Australian</ion-option>
+                                <ion-option value="Japanese">Japanese</ion-option>
+
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Occupation</ion-label>
+                            <ion-select>
+                                <ion-option value="Operations Manager" selected>Operations Manager</ion-option>
+                                <ion-option value="Operations Head">Operations Head</ion-option>
+                                <ion-option value="Marketing">Marketing</ion-option>
+                                <ion-option value="Freelancer">Freelancer</ion-option>
+                                <ion-option value="Human Resource">Human Resource</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Orientation</ion-label>
+                            <ion-select>
+                                <ion-option value="Straight" selected>Straight</ion-option>
+                                <ion-option value="Horizontal">Horizontal</ion-option>
+                                <ion-option value="Vertical">Vertical</ion-option>
+
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Intentions</ion-label>
+                            <ion-select>
+                                <ion-option value="Wants to make friends" selected>Wants to make friends</ion-option>
+                                <ion-option value="For enjoying free times">For enjoying free times</ion-option>
+                                <ion-option value="For hangouts">For hangouts</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+
+                        <ion-item>
+                            <ion-label>Height</ion-label>
+                            <ion-select>
+                                <ion-option value="5”0" selected>5”0</ion-option>
+                                <ion-option value="5”3">5”3</ion-option>
+                                <ion-option value="5”7">5”7</ion-option>
+                                <ion-option value="5”12">5”12</ion-option>
+                                <ion-option value="5”12">6”0</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+
+
+                        <div class="signUpIntrest">
+                            <ion-label>Interests
+                                <ion-icon name="md-add-circle" (click)="addMore(interests,'interests')"></ion-icon>
+                            </ion-label>
+                            <ion-badge *ngFor="let interest of interests" (click)="removeFromArr(interests,interest)">{{interest}}</ion-badge>
+                        </div>
+
+                        <ion-item>
+                            <ion-label>Drinking</ion-label>
+                            <ion-select>
+                                <ion-option value="Socially" selected>Socially</ion-option>
+                                <ion-option value="Occasionally">Occasionally</ion-option>
+                                <ion-option value="Regularly">Regularly</ion-option>
+                                <ion-option value="Party time">Party time</ion-option>
+                                <ion-option value="Relaxation">Relaxation</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Smoking</ion-label>
+                            <ion-select>
+                                <ion-option value="Socially" selected>Socially</ion-option>
+                                <ion-option value="Occasionally">Occasionally</ion-option>
+                                <ion-option value="Regularly">Regularly</ion-option>
+                                <ion-option value="Party time">Party time</ion-option>
+                                <ion-option value="Relaxation">Relaxation</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <button class="skipLast" color="main" ion-button (click)="login()">
+                            Skip
+                        </button>
+
+                        <button class="nextLast" color="main" ion-button (click)="login()">
+                            Next
+                        </button>
+                    </ion-list>
+                </form>
+            </ion-slide>
+        </ng-container>
+        <ng-container *ngIf="user?.type === 'business'">
+            <ion-slide>
+                <form>
+                    <div class="profilePicUpload">
+                        <ion-icon name="ios-camera"></ion-icon>
+                        <p>Business
+                            <br> Photo</p>
                     </div>
-                </div>
 
-                <div class="musicList" style="background:url(assets/imgs/musicBG3.jpg)">
-                    <div class="musicListInner">
-                        <img src="../assets/imgs/musicIcon.png">
-                        <h6>R &amp; B</h6>
-                        <div class="seperator"></div>
-                    </div>
-                </div>
+                    <ion-list text-center>
+                        <ion-item>
+                            <ion-input class="userIcon" type="text" placeholder="Business Name"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input class="birthdayIcon" type="text" placeholder="Founding Date"></ion-input>
+                        </ion-item>
+                        <button class="next" color="main" ion-button (click)="nextstep()">
+                            Next
+                        </button>
+                    </ion-list>
+                </form>
+            </ion-slide>
 
-                <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
-                    <div class="musicListInner">
-                        <img src="../assets/imgs/musicIcon.png">
-                        <h6>electro</h6>
-                        <div class="seperator"></div>
-                    </div>
-                </div>
+            <ion-slide>
+                <div class="musicSelection">
+                    <p>For best experience, please select your music genre preference</p>
+                    <ion-searchbar placeholder="Search Music Genre"></ion-searchbar>
 
-                <button class="next" color="main" ion-button (click)="nextstep()">
-                    Next
-                </button>
-            </div>
-        </ion-slide>
-
-        <ion-slide>
-            <form class="moreInfoabout">
-                <p>Share some more info about you
-                    <span>You may skip this step for now</span>
-                </p>
-                <ion-list text-center>
-                    <ion-item>
-                        <ion-label>Nationality</ion-label>
-                        <ion-select>
-                            <ion-option value="Indian">Indian</ion-option>
-                            <ion-option value="Italian" selected>Italian</ion-option>
-                            <ion-option value="German">German</ion-option>
-                            <ion-option value="Australian">Australian</ion-option>
-                            <ion-option value="Japanese">Japanese</ion-option>
-
-                        </ion-select>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>Occupation</ion-label>
-                        <ion-select>
-                            <ion-option value="Operations Manager" selected>Operations Manager</ion-option>
-                            <ion-option value="Operations Head">Operations Head</ion-option>
-                            <ion-option value="Marketing">Marketing</ion-option>
-                            <ion-option value="Freelancer">Freelancer</ion-option>
-                            <ion-option value="Human Resource">Human Resource</ion-option>
-                        </ion-select>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>Orientation</ion-label>
-                        <ion-select>
-                            <ion-option value="Straight" selected>Straight</ion-option>
-                            <ion-option value="Horizontal">Horizontal</ion-option>
-                            <ion-option value="Vertical">Vertical</ion-option>
-
-                        </ion-select>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>Intentions</ion-label>
-                        <ion-select>
-                            <ion-option value="Wants to make friends" selected>Wants to make friends</ion-option>
-                            <ion-option value="For enjoying free times">For enjoying free times</ion-option>
-                            <ion-option value="For hangouts">For hangouts</ion-option>
-                        </ion-select>
-                    </ion-item>
-
-
-                    <ion-item>
-                        <ion-label>Height</ion-label>
-                        <ion-select>
-                            <ion-option value="5”0" selected>5”0</ion-option>
-                            <ion-option value="5”3">5”3</ion-option>
-                            <ion-option value="5”7">5”7</ion-option>
-                            <ion-option value="5”12">5”12</ion-option>
-                            <ion-option value="5”12">6”0</ion-option>
-                        </ion-select>
-                    </ion-item>
-
-
-
-                    <div class="signUpIntrest">
-                        <ion-label>Interests
-                            <ion-icon name="md-add-circle"></ion-icon>
-                        </ion-label>
-                        <ion-badge>Clubbing</ion-badge>
-                        <ion-badge>Dancing</ion-badge>
-                        <ion-badge>Hiking</ion-badge>
+                    <div class="musicList" style="background:url(assets/imgs/musicBG1.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>HipHop</h6>
+                            <div class="seperator"></div>
+                        </div>
                     </div>
 
-                    <ion-item>
-                        <ion-label>Drinking</ion-label>
-                        <ion-select>
-                            <ion-option value="Socially" selected>Socially</ion-option>
-                            <ion-option value="Occasionally">Occasionally</ion-option>
-                            <ion-option value="Regularly">Regularly</ion-option>
-                            <ion-option value="Party time">Party time</ion-option>
-                            <ion-option value="Relaxation">Relaxation</ion-option>
-                        </ion-select>
-                    </ion-item>
+                    <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>Trap</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
 
-                    <ion-item>
-                        <ion-label>Smoking</ion-label>
-                        <ion-select>
-                            <ion-option value="Socially" selected>Socially</ion-option>
-                            <ion-option value="Occasionally">Occasionally</ion-option>
-                            <ion-option value="Regularly">Regularly</ion-option>
-                            <ion-option value="Party time">Party time</ion-option>
-                            <ion-option value="Relaxation">Relaxation</ion-option>
-                        </ion-select>
-                    </ion-item>
+                    <div class="musicList" style="background:url(assets/imgs/musicBG3.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>R &amp; B</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
 
-                    <button class="skipLast" color="main" ion-button (click)="login()">
-                        Skip
-                    </button>
+                    <div class="musicList" style="background:url(assets/imgs/musicBG2.jpg)">
+                        <div class="musicListInner">
+                            <img src="../assets/imgs/musicIcon.png">
+                            <h6>electro</h6>
+                            <div class="seperator"></div>
+                        </div>
+                    </div>
 
-                    <button class="nextLast" color="main" ion-button (click)="login()">
+                    <button class="next" color="main" ion-button (click)="nextstep()">
                         Next
                     </button>
-                </ion-list>
-            </form>
-        </ion-slide>
+                </div>
+            </ion-slide>
+
+
+            <ion-slide>
+                <form class="moreInfoabout">
+                    <p>Share some more info about your business
+                        <span>You may skip this step for now</span>
+                    </p>
+                    <ion-list text-center>
+                        <ion-item>
+                            <ion-label>Location</ion-label>
+                            <ion-select>
+                                <ion-option value="Indian">India</ion-option>
+                                <ion-option value="Italian" selected>Itali</ion-option>
+                                <ion-option value="German">German</ion-option>
+                                <ion-option value="Australian">Australia</ion-option>
+                                <ion-option value="Japanese">Japan</ion-option>
+
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Business Type</ion-label>
+                            <ion-select>
+                                <ion-option value="Operations Manager" selected>Club</ion-option>
+                                <ion-option value="Marketing">Bar</ion-option>
+                                <ion-option value="Freelancer">Restaurant</ion-option>
+                                <ion-option value="Human Resource">Strip Club</ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Orientation</ion-label>
+                            <ion-select>
+                                <ion-option value="Straight" selected>Any</ion-option>
+                                <ion-option value="Horizontal">Straight</ion-option>
+                                <ion-option value="Vertical">Gay</ion-option>
+
+                            </ion-select>
+                        </ion-item>
+
+
+                        <div class="signUpIntrest">
+                            <ion-label>Intentions
+                                <ion-icon name="md-add-circle" (click)="addMore(intentions,'intentions')"></ion-icon>
+                            </ion-label>
+                            <ion-badge *ngFor="let intention of intentions" (click)="removeFromArr(intentions,intention)">{{intention}}</ion-badge>
+                        </div>
+
+
+                        <div class="signUpIntrest">
+                            <ion-label>Business Interests
+                                <ion-icon name="md-add-circle" (click)="addMore(businessInterests,'businessinterests')"></ion-icon>
+                            </ion-label>
+                            <ion-badge *ngFor="let interest of businessInterests" (click)="removeFromArr(businessInterests,interest)">{{interest}}</ion-badge>
+                        </div>
+
+                        <div class="signUpIntrest">
+                            <ion-label>Food and Drinks
+                                <ion-icon name="md-add-circle" (click)="addMore(foods,'foods')"></ion-icon>
+                            </ion-label>
+                            <ion-badge *ngFor="let food of foods" (click)="removeFromArr(foods,food)">{{food}}</ion-badge>
+                        </div>
+
+
+                        <button class="skipLast" color="main" ion-button (click)="login()">
+                            Skip
+                        </button>
+
+                        <button class="nextLast" color="main" ion-button (click)="login()">
+                            Next
+                        </button>
+                    </ion-list>
+                </form>
+            </ion-slide>
+        </ng-container>
+
 
     </ion-slides>
 

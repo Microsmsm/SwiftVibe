@@ -1,13 +1,15 @@
+import { TabsPage } from './../pages/tabs/tabs';
 import { LoginPage } from './../pages/login/login';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from '../pages/tabs/tabs';
 import { NewPostPage } from '../pages/new-post/new-post';
 import { signupsteps } from '../pages/signupsteps/signupsteps';
 import { signupverification } from '../pages/signupverification/signupverification';
+import { MenuPage } from '../pages/menu/menu';
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'

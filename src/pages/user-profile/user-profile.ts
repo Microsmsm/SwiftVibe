@@ -22,7 +22,7 @@ export class UserProfilePage {
   type:any;
   counter = Array;
 
-  images: Array<string> = ['images/gallery1.jpg','images/gallery2.jpg','images/gallery.jpg','images/banner2.jpg','images/banner3.jpg'];
+  images: Array<string> = ['assets/images/gallery1.jpg','assets/images/gallery2.jpg','assets/images/gallery.jpg','assets/images/banner2.jpg','assets/images/banner3.jpg'];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService,public actionSheetCtrl:ActionSheetController) {
 

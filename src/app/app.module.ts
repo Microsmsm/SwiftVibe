@@ -101,7 +101,7 @@ import {VenueComponent } from '../components/venue/venue';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
-        tabsHideOnSubPages: 'true'
+        tabsHideOnSubPages: true
     }),
     HttpModule
   ],

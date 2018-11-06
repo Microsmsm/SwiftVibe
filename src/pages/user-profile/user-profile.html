@@ -15,7 +15,7 @@
 <ion-content class="userProfile">
 
   <ion-fab bottom right >
-    <button ion-fab color="black" ><img src="images/newPost.png"  style="object-fit: cover;" /></button>
+    <button ion-fab color="black" ><img src="assets/images/newPost.png"  style="object-fit: cover;" /></button>
   </ion-fab>
 
 
@@ -25,7 +25,7 @@
 
       <div style="height: 25%" >
 
-          <img src="images/placeholder2.png"  style="object-fit: cover;" />
+          <img src="assets/images/placeholder2.png"  style="object-fit: cover;" />
 
       </div>
 
@@ -147,10 +147,10 @@
 
     <ion-list *ngSwitchCase="'gallery'" no-lines>
       <ng-container >
-      <div class="gallery"    *ngFor="let image of dataService.images" [style.background-image]="' url('+image+')'">
+      <div class="gallery"    *ngFor="let image of dataService.assets/images" [style.background-image]="' url('+image+')'">
         <ion-row style="min-height: 100%;">
           <ion-col col-12 text-right padding >
-            <img src="images/placeholder2.png" >
+            <img src="assets/images/placeholder2.png" >
 
           </ion-col>
         </ion-row>

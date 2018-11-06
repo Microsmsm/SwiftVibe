@@ -4,6 +4,7 @@ import { Camera } from '@ionic-native/camera';
 import { PreviewPage } from '../preview/preview';
 import {Post} from '../../models/post-model';
 import {DataService} from '../../providers/data-service';
+import { NewEventPage } from '../new-event/new-event';
 
 @Component({
   selector: 'page-new-post',
@@ -18,6 +19,7 @@ export class NewPostPage {
 
   today = new Date();
   date:any;
+  userType:any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService,private camera: Camera,public actionSheetCtrl:ActionSheetController) {
@@ -28,6 +30,8 @@ export class NewPostPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewPostPage');
+
+    this.userType = this.dataService.permission;
   }
 
   start(){
@@ -40,6 +44,9 @@ export class NewPostPage {
 
     this.text = "";
 
+  }
+  createEvent(){
+    this.navCtrl.push(NewEventPage)
   }
 
 

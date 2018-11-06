@@ -44,12 +44,13 @@ export class LoginPage {
           handler: () => {
             this.dataService.permission = 'individual';
 
-            let newUser = new User('userCode0','individual','Chloe','Female','Auckland','NZ','M','Insurance','Single','Straight',1.67,'Kiwi',true,true,'Lets meet & drink',0,'123','101','G','A','D','C','Address','chloe@gmail.com','images/girl3.jpg','images/banner4.jpg','hashTest');
+            let newUser = new User('userCode0','individual','Chloe','Female','Auckland','NZ','M','Insurance','Single','Straight',1.67,'Kiwi',true,true,'Lets meet & drink',0,'123','101','G','A','D','C','Address','chloe@gmail.com','assets/images/girl3.jpg','assets/images/banner4.jpg','hashTest');
             this.dataService.users.push(newUser);
             this.dataService.account = newUser;
             this.dataService.getNotificationBadgeNumber();
             this.dataService.getMessageBadgeNumber();
             this.navCtrl.setRoot(TabsPage);
+            localStorage.userType = 'individual';
 
           }
         },{
@@ -57,12 +58,13 @@ export class LoginPage {
           handler: () => {
             this.dataService.permission = 'business';
 
-            let newUser = new User('userCode','business','Club City','G','C','C','M','O','I','O','H','N','D','S','A',4,'500','450','Hip Hop','18+','Casual',150,'34 Forte St','test@clubcity.com','images/logo1.jpg','images/banner5.jpg','hashTest');
+            let newUser = new User('userCode','business','Club City','G','C','C','M','O','I','O','H','N','D','S','A',4,'500','450','Hip Hop','18+','Casual',150,'34 Forte St','test@clubcity.com','assets/images/logo1.jpg','assets/images/banner5.jpg','hashTest');
            this.dataService.users.push(newUser);
             this.dataService.account = newUser;
             this.dataService.getNotificationBadgeNumber();
             this.dataService.getMessageBadgeNumber();
             this.navCtrl.setRoot(TabsPage);
+            localStorage.userType = 'business';
           }
         },{
           text: 'Cancel',

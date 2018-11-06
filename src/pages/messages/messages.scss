@@ -1,4 +1,42 @@
 page-messages {
+    // .online{
+    //     outline-color:rgb(0, 255, 0) !important;
+    //     outline-offset: 5px;
+    //     outline-style: solid;
+    //     outline-width: 3px;
+
+    // }
+    ion-avatar{
+        ion-badge{
+            position: absolute;
+        }
+    }
+
+  ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 120px;
+    overflow: hidden;
+
+    .scroll-item {
+      display: inline-block;
+      width: auto;
+    }
+
+    .selectable-icon{
+      margin: 10px 20px 10px 20px;
+      color: red;
+      font-size: 100px;
+    }
+
+    ion-avatar img{
+      margin: 10px;
+    }
+  }
+
+  /* Hide ion-content scrollbar */
+  ::-webkit-scrollbar{
+    display:none;
+  }
     .messages {
         background: #0a0a16;
         letter-spacing: 0.5px;

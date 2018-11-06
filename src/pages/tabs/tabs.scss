@@ -1,0 +1,74 @@
+page-tabs {
+    .fancyButton{
+        background: red !important;
+        display: block;
+    }
+    a{
+        //
+    }
+    
+    // .tab-button:nth-child(3){
+        
+    //  //transform: scale(2) translate(0px, -5px);
+    //  background: white !important;
+    //  border-radius: 100px;
+    //  ion-icon{
+    //      color:white;
+    //      background: black;
+    //      border-radius: 50px;
+    //  }
+    // }
+    .tab-button{
+        overflow: visible;
+      }
+      .tabs-ios .tab-button-icon{
+        color: #9aa8c1;
+      }
+      .tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+        color: #9aa8c1;
+      }
+      .tabs-ios .tab-button-text{
+        color: #828386;
+      }
+      #tab-t0-1 .tab-button-icon{
+        color:purple;
+        //border: 2px solid #b99266;
+       // border-radius: 60px;
+        //width: 60px;
+        //height: 60px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        //background-color: #f7f8fa;
+        //top: -25px;
+        //position: absolute;
+        //box-shadow: 0 3px 8px #e2e3e7;
+      }
+      #tab-t0-2 .tab-button-icon{
+        color: black;
+        //border: 2px solid #b99266;
+        border-radius: 60px;
+        width: 60px;
+        height: 60px;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #f7f8fa;
+        top: -25px;
+        position: absolute;
+        box-shadow: 0 3px 8px #e2e3e7;
+      }
+      #tab-t0-5{
+        height: 0 !important;
+        width: 0 !important;
+        max-height: 0 !important;
+        max-width: 0 !important;
+      }
+
+
+     
+
+   
+}
